@@ -1,0 +1,272 @@
+/* =============================================
+   MENTOR EARNINGS PAGE — Skill Coin Theme
+============================================= */
+
+.mentor-earnings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── HEADER ─── */
+
+.earnings-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.earnings-topbar h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.earnings-topbar p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ─── BALANCE CARD ─── */
+
+.earnings-balance-card {
+  background: linear-gradient(135deg, #1a1207 0%, #241708 50%, #1a1207 100%);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.earnings-balance-label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.earnings-balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.earnings-coin-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.earnings-balance-amount {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fbbf24;
+  line-height: 1;
+}
+
+/* ─── STAT CARDS ─── */
+
+.earnings-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.earnings-stat-card {
+  background: #11182f;
+  border-radius: 20px;
+  padding: 24px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.earnings-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  border-radius: 20px 20px 0 0;
+}
+
+.earnings-stat-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #22d3ee;
+  margin-bottom: 6px;
+}
+
+.earnings-stat-value .stat-coin {
+  font-size: 1.5rem;
+}
+
+.earnings-stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ─── TREND CARD ─── */
+
+.earnings-trend-card {
+  background: #11182f;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.earnings-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+/* ─── HISTORY CARD ─── */
+
+.earnings-history-card {
+  background: #11182f;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.earnings-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.earnings-history-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.earnings-history-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.history-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  color: #34d399;
+}
+
+.history-icon-wrap.debit {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.history-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 2px;
+}
+
+.history-info span {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.history-amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.history-amount.debit {
+  color: #f87171;
+}
+
+.history-amount .h-coin {
+  font-size: 1rem;
+}
+
+/* ─── CHART TOOLTIP ─── */
+
+.earnings-tooltip {
+  background: #151c35;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.earnings-tooltip p {
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+}
+
+.earnings-tooltip span {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 768px) {
+  .earnings-topbar h1 { font-size: 1.8rem; }
+  .earnings-stats { grid-template-columns: 1fr; }
+  .earnings-balance-amount { font-size: 3rem; }
+}
+
+/* ─── LIGHT MODE ─── */
+
+body.light .earnings-balance-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fffbeb 100%);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+body.light .earnings-balance-label { color: #92400e; }
+
+body.light .earnings-stat-card,
+body.light .earnings-trend-card,
+body.light .earnings-history-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+body.light .earnings-stat-label { color: #64748b; }
+body.light .earnings-card-title { color: #111827; }
+body.light .earnings-topbar h1 { color: #111827; }
+body.light .earnings-topbar p { color: #64748b; }
+body.light .history-info h4 { color: #111827; }
+body.light .history-info span { color: #9ca3af; }
+body.light .earnings-history-item { border-color: #f1f5f9; }

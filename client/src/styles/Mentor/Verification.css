@@ -1,0 +1,129 @@
+/* =============================================
+   MENTOR VERIFICATION PAGE — Verified Card
+============================================= */
+
+.mentor-verification-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 70vh;
+}
+
+/* ─── VERIFIED CARD ─── */
+
+.verified-main-card {
+  background: linear-gradient(135deg, #051a12 0%, #0a2318 50%, #051a12 100%);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 28px;
+  padding: 56px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* ─── CHECK ICON ─── */
+
+.verified-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 40px rgba(16, 185, 129, 0.35);
+}
+
+.verified-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #34d399;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.verified-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 0 auto 36px;
+}
+
+/* ─── BENEFITS GRID ─── */
+
+.verified-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 680px;
+}
+
+.verified-benefit-item {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #a7f3d0;
+  text-align: left;
+}
+
+.verified-benefit-item svg {
+  color: #10b981;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ─── PENDING STATE ─── */
+
+.pending-main-card {
+  background: linear-gradient(135deg, #1a1207, #241708);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 28px;
+  padding: 56px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 640px) {
+  .verified-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verified-main-card {
+    padding: 36px 20px;
+  }
+
+  .verified-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ─── LIGHT MODE ─── */
+
+body.light .verified-main-card {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+body.light .verified-title { color: #065f46; }
+body.light .verified-subtitle { color: #374151; }
+body.light .verified-benefit-item {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #065f46;
+}

@@ -1,0 +1,718 @@
+/* =========================================================
+   EDIT PROFILE
+========================================================= */
+
+.input-error {
+    border-color: #f87171 !important;
+}
+
+.edit-profile-page {
+    width: 100%;
+    max-width: 740px;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.edit-profile-page,
+.edit-profile-page * {
+    box-sizing: border-box;
+}
+
+.edit-profile-page input,
+.edit-profile-page textarea,
+.edit-profile-page select {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.skill-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0.75rem;
+}
+
+.skill-section-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #94a3b8;
+    min-width: 0;
+}
+
+.skill-completion {
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TAG INPUT
+========================================================= */
+
+.tag-input-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    min-height: 48px;
+    padding: 0.625rem;
+
+    background: rgba(26, 26, 46, 0.8);
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 0.75rem;
+
+    overflow: hidden;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    padding: 0.25rem 0.75rem;
+
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    color: var(--tag-color);
+
+    border-radius: 9999px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    max-width: 100%;
+}
+
+.tag-remove-btn {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    color: inherit;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.empty-tags {
+    color: #475569;
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   INPUT + ADD BUTTON
+========================================================= */
+
+.tag-input-row {
+    display: flex;
+    align-items: stretch;
+
+    gap: 0.5rem;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin-top: 0.5rem;
+}
+
+.tag-input-field {
+    flex: 1 1 0 !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+.tag-add-btn {
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: 78px;
+
+    white-space: nowrap;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.35rem;
+}
+
+.tag-helper-text {
+    font-size: 0.72rem;
+
+    color: #64748b;
+
+    margin: 0.5rem 0 0;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .edit-profile-page {
+        width: 100%;
+        max-width: 100% !important;
+        min-width: 0;
+
+        padding: 0.75rem;
+
+        margin: 0 !important;
+    }
+
+    .edit-profile-page .card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /* Location + Availability */
+    .edit-grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Experience */
+    .experience-grid {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        ) !important;
+    }
+
+    /* Skills input */
+    .tag-input-row {
+        display: flex;
+
+        width: 100%;
+        min-width: 0;
+
+        gap: 0.5rem;
+    }
+
+    .tag-input-field {
+        min-width: 0 !important;
+
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+    }
+
+    .tag-add-btn {
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .edit-profile-page {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 0.75rem !important;
+
+        margin: 0 !important;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .edit-profile-page .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 1rem !important;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .edit-profile-page > div:first-child {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        gap: 0.5rem !important;
+
+        margin-bottom: 1.25rem !important;
+    }
+
+    .edit-profile-page h1 {
+        font-size: 1.35rem !important;
+    }
+
+    .edit-profile-page h1 + p {
+        font-size: 0.78rem !important;
+
+        line-height: 1.4;
+    }
+
+    .edit-profile-page > div:first-child .btn-primary {
+        padding: 0.5rem 0.8rem !important;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       EXPERIENCE LEVEL
+    ===================================================== */
+
+    .experience-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 0.5rem !important;
+
+        width: 100%;
+    }
+
+    .experience-grid button {
+        min-width: 0 !important;
+
+        width: 100%;
+
+        padding: 0.65rem 0.35rem !important;
+    }
+
+
+    /* =====================================================
+       SKILLS SECTION
+    ===================================================== */
+
+    .skill-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .skill-section-header {
+        display: flex !important;
+
+        align-items: flex-start !important;
+
+        justify-content: space-between !important;
+
+        gap: 0.4rem !important;
+
+        flex-wrap: wrap !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        margin-bottom: 0.7rem !important;
+    }
+
+    .skill-section-title {
+        flex: 1 1 auto !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+
+        font-size: 0.9rem !important;
+
+        line-height: 1.4 !important;
+    }
+
+    .skill-completion {
+        flex: 0 0 auto !important;
+
+        font-size: 0.68rem !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       TAG LIST
+    ===================================================== */
+
+    .tag-input-wrapper {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+    .tag-list {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        padding: 0.55rem !important;
+
+        overflow: hidden !important;
+    }
+
+    .skill-tag {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       TAG INPUT ROW
+    ===================================================== */
+
+    .tag-input-row {
+        display: flex !important;
+
+        align-items: stretch !important;
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        gap: 0.45rem !important;
+    }
+
+    .tag-input-field {
+        flex: 1 1 0 !important;
+
+        width: auto !important;
+
+        min-width: 0 !important;
+
+        max-width: 100% !important;
+
+        font-size: 0.85rem !important;
+    }
+
+    .tag-add-btn {
+        flex: 0 0 auto !important;
+
+        min-width: 72px !important;
+
+        padding: 0.5rem 0.65rem !important;
+
+        font-size: 0.8rem !important;
+    }
+
+    .tag-helper-text {
+        font-size: 0.68rem !important;
+
+        max-width: 100%;
+
+        line-height: 1.4;
+
+        word-break: normal;
+    }
+
+
+    /* =====================================================
+       SOCIAL LINKS / FORM INPUTS
+    ===================================================== */
+
+    .edit-profile-page input,
+    .edit-profile-page textarea,
+    .edit-profile-page select {
+        width: 100%;
+
+        min-width: 0;
+
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       PROFILE PHOTO
+    ===================================================== */
+
+    .edit-profile-page .card img,
+    .edit-profile-page .card .avatar {
+        max-width: 80px;
+    }
+
+
+    /* =====================================================
+       BOTTOM BUTTONS
+    ===================================================== */
+
+    .edit-profile-page form > div:last-child {
+        width: 100%;
+
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+    }
+
+    .edit-profile-page form > div:last-child a,
+    .edit-profile-page form > div:last-child button {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+/*
+   IMPORTANT:
+   Edit Profile uses .edit-profile-page,
+   NOT .profile-page.
+*/
+
+
+/* =========================================================
+   LIGHT - MAIN PAGE
+========================================================= */
+
+body.light .edit-profile-page {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   LIGHT - CARDS
+========================================================= */
+
+body.light .edit-profile-page .card {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #e2e8f0 !important;
+}
+
+
+/* =========================================================
+   LIGHT - HEADINGS
+========================================================= */
+
+body.light .edit-profile-page h1,
+body.light .edit-profile-page h2,
+body.light .edit-profile-page h3,
+body.light .edit-profile-page h4 {
+    color: #0f172a;
+}
+
+
+/* Skill headings */
+body.light .edit-profile-page .skill-section-title {
+    color: #334155 !important;
+}
+
+body.light .edit-profile-page .skill-completion {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   LIGHT - ALL FORM CONTROLS
+========================================================= */
+
+body.light .edit-profile-page input,
+body.light .edit-profile-page textarea,
+body.light .edit-profile-page select {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #dbe2ea !important;
+}
+
+
+/* Placeholder */
+body.light .edit-profile-page input::placeholder,
+body.light .edit-profile-page textarea::placeholder {
+    color: #94a3b8 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Focus */
+body.light .edit-profile-page input:focus,
+body.light .edit-profile-page textarea:focus,
+body.light .edit-profile-page select:focus {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #8b5cf6 !important;
+
+    outline: none !important;
+}
+
+
+/*
+   IMPORTANT:
+   Text stays dark even after clicking somewhere else.
+*/
+
+body.light .edit-profile-page input:not(:focus),
+body.light .edit-profile-page textarea:not(:focus),
+body.light .edit-profile-page select:not(:focus) {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+}
+
+
+/* Cursor */
+body.light .edit-profile-page input,
+body.light .edit-profile-page textarea {
+    caret-color: #7c3aed;
+}
+
+
+/* =========================================================
+   LIGHT - TAG LIST
+========================================================= */
+
+body.light .edit-profile-page .tag-list {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #dbe2ea !important;
+}
+
+
+/* Empty tags */
+body.light .edit-profile-page .empty-tags {
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   LIGHT - SKILL TAGS
+========================================================= */
+
+body.light .edit-profile-page .skill-tag {
+    background: var(--tag-bg) !important;
+
+    color: var(--tag-color) !important;
+
+    border-color: var(--tag-border) !important;
+}
+
+
+/* Remove tag button */
+body.light .edit-profile-page .tag-remove-btn {
+    color: inherit !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   LIGHT - TAG INPUT ROW
+========================================================= */
+
+body.light .edit-profile-page .tag-input-row {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   LIGHT - ADD BUTTON
+========================================================= */
+
+body.light .edit-profile-page .tag-add-btn {
+    background: #ffffff !important;
+
+    color: #7c3aed !important;
+
+    border-color: #c4b5fd !important;
+}
+
+body.light .edit-profile-page .tag-add-btn:hover {
+    background: #f5f3ff !important;
+
+    border-color: #a78bfa !important;
+}
+
+
+/* =========================================================
+   LIGHT - HELPER TEXT
+========================================================= */
+
+body.light .edit-profile-page .tag-helper-text {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   LIGHT - DIVIDER
+========================================================= */
+
+body.light .edit-profile-page .divider {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(124, 58, 237, 0.20),
+            transparent
+        ) !important;
+}
+
+
+/* =========================================================
+   LIGHT - ERROR
+========================================================= */
+
+body.light .edit-profile-page .input-error {
+    border-color: #f87171 !important;
+}

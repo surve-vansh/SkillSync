@@ -1,0 +1,1574 @@
+/* =========================================================
+   PROGRESS PAGE
+========================================================= */
+
+.progress-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    color: var(--text-primary, #e2e8f0);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.progress-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    padding: 2rem 2.25rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 1.25rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76, 29, 149, 0.22),
+            rgba(8, 145, 178, 0.08)
+        );
+
+    box-sizing: border-box;
+}
+
+.progress-hero-icon {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1rem;
+
+    background: rgba(139, 92, 246, 0.12);
+    color: #a78bfa;
+
+    font-size: 2rem;
+}
+
+.progress-hero h1 {
+    margin: 0 0 0.4rem;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+
+    color: #f1f5f9;
+}
+
+.progress-hero h1 span {
+    background:
+        linear-gradient(
+            135deg,
+            #a78bfa,
+            #22d3ee
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.progress-hero p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   OVERALL PROGRESS
+========================================================= */
+
+.overall-progress-card {
+    padding: 1.5rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 1.1rem;
+
+    background: #19192d;
+
+    box-sizing: border-box;
+}
+
+.overall-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 1.25rem;
+}
+
+.progress-label {
+    display: block;
+
+    margin-bottom: 0.35rem;
+
+    color: #94a3b8;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.overall-progress-header h2 {
+    margin: 0;
+
+    color: #f1f5f9;
+
+    font-size: 1.1rem;
+}
+
+.overall-percentage {
+    color: #a78bfa;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+/* PROGRESS BAR */
+
+.overall-progress-bar {
+    width: 100%;
+    height: 12px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #29293d;
+}
+
+.overall-progress-bar div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #06b6d4
+        );
+
+    transition: width 0.5s ease;
+}
+
+.progress-goal {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 0.65rem;
+
+    color: #64748b;
+
+    font-size: 0.75rem;
+}
+
+.progress-goal span:first-child {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.25rem;
+
+    color: #34d399;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.progress-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+.progress-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 0.9rem;
+
+    padding: 1.15rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    border-radius: 1rem;
+
+    background: #19192d;
+
+    box-sizing: border-box;
+}
+
+.progress-stat-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.8rem;
+
+    font-size: 1.3rem;
+}
+
+.progress-stat-icon.purple {
+    background: rgba(139, 92, 246, 0.12);
+    color: #a78bfa;
+}
+
+.progress-stat-icon.green {
+    background: rgba(52, 211, 153, 0.12);
+    color: #34d399;
+}
+
+.progress-stat-icon.cyan {
+    background: rgba(34, 211, 238, 0.12);
+    color: #22d3ee;
+}
+
+.progress-stat-icon.orange {
+    background: rgba(251, 146, 60, 0.12);
+    color: #fb923c;
+}
+
+.progress-stat-card span {
+    display: block;
+
+    margin-bottom: 0.25rem;
+
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+}
+
+.progress-stat-card strong {
+    display: block;
+
+    color: #f1f5f9;
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.progress-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(280px, 1fr);
+
+    gap: 1rem;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.progress-section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 1.25rem;
+}
+
+.progress-section-heading h2 {
+    margin: 0 0 0.3rem;
+
+    color: #f1f5f9;
+
+    font-size: 1.15rem;
+}
+
+.progress-section-heading p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.8rem;
+}
+
+.progress-section-heading > svg {
+    color: #a78bfa;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   SKILL PROGRESS
+========================================================= */
+
+.skill-progress-card {
+    padding: 1.5rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    border-radius: 1.1rem;
+
+    background: #19192d;
+
+    box-sizing: border-box;
+}
+
+.skill-progress-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.35rem;
+}
+
+
+/* CLICKABLE SKILL */
+
+.skill-progress-item {
+    width: 100%;
+
+    display: block;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 0.7rem;
+
+    background: transparent;
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.skill-progress-item:hover {
+    background: rgba(139, 92, 246, 0.06);
+
+    transform: translateX(3px);
+}
+
+.skill-progress-item:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 4px;
+}
+
+
+/* SKILL TOP */
+
+.skill-progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 0.55rem;
+}
+
+.skill-progress-top div {
+    min-width: 0;
+}
+
+.skill-progress-top strong {
+    display: block;
+
+    margin-bottom: 0.2rem;
+
+    color: #f1f5f9;
+
+    font-size: 0.9rem;
+}
+
+.skill-progress-top span {
+    color: #64748b;
+
+    font-size: 0.7rem;
+}
+
+.skill-progress-right {
+    display: flex;
+    align-items: center;
+
+    gap: 0.35rem;
+
+    flex-shrink: 0;
+}
+
+.skill-progress-right b {
+    color: #a78bfa;
+
+    font-size: 0.8rem;
+}
+
+.skill-progress-right svg {
+    color: #64748b;
+
+    font-size: 1rem;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.skill-progress-item:hover .skill-progress-right svg {
+    transform: translateX(3px);
+
+    color: #a78bfa;
+}
+
+
+/* SKILL BAR */
+
+.skill-progress-track {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #29293d;
+}
+
+.skill-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+}
+
+.skill-progress-fill.purple {
+    background: #8b5cf6;
+}
+
+.skill-progress-fill.green {
+    background: #10b981;
+}
+
+.skill-progress-fill.yellow {
+    background: #f59e0b;
+}
+
+.skill-progress-fill.cyan {
+    background: #06b6d4;
+}
+
+
+/* =========================================================
+   STREAK
+========================================================= */
+
+.streak-card {
+    padding: 1.5rem;
+
+    border: 1px solid rgba(251, 146, 60, 0.2);
+    border-radius: 1.1rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(251, 146, 60, 0.08),
+            #19192d
+        );
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.streak-icon {
+    width: 56px;
+    height: 56px;
+
+    margin: 0 auto 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(251, 146, 60, 0.12);
+
+    color: #fb923c;
+
+    font-size: 1.7rem;
+}
+
+.streak-label {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 0.8rem;
+}
+
+.streak-number {
+    display: inline-block;
+
+    margin-top: 0.4rem;
+
+    color: #fb923c;
+
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.streak-days {
+    margin-left: 0.35rem;
+
+    color: #fbbf24;
+
+    font-weight: 700;
+}
+
+.streak-card p {
+    margin: 0.8rem 0 1.25rem;
+
+    color: #64748b;
+
+    font-size: 0.75rem;
+
+    line-height: 1.5;
+}
+
+.streak-week {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 0.4rem;
+}
+
+.streak-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.35rem;
+
+    color: #64748b;
+
+    font-size: 0.65rem;
+}
+
+.streak-day i {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #29293d;
+
+    color: transparent;
+
+    font-style: normal;
+
+    font-size: 0.7rem;
+}
+
+.streak-day.completed {
+    color: #fb923c;
+}
+
+.streak-day.completed i {
+    background: rgba(251, 146, 60, 0.15);
+
+    color: #fb923c;
+}
+
+
+/* =========================================================
+   RECENT ACTIVITY
+========================================================= */
+
+.recent-activity-card {
+    padding: 1.5rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+    border-radius: 1.1rem;
+
+    background: #19192d;
+
+    box-sizing: border-box;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    padding: 0.85rem 0;
+
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.65rem;
+
+    font-size: 1rem;
+}
+
+.activity-icon.success {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+}
+
+.activity-icon.learning {
+    background: rgba(34, 211, 238, 0.1);
+    color: #22d3ee;
+}
+
+.activity-icon.skill {
+    background: rgba(139, 92, 246, 0.1);
+    color: #a78bfa;
+}
+
+.activity-content {
+    min-width: 0;
+}
+
+.activity-content strong {
+    display: block;
+
+    margin-bottom: 0.2rem;
+
+    color: #e2e8f0;
+
+    font-size: 0.82rem;
+}
+
+.activity-content span {
+    color: #64748b;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   ACHIEVEMENT
+========================================================= */
+
+.progress-achievement {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) 220px;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.25rem 1.5rem;
+
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 1rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(251, 191, 36, 0.06),
+            rgba(139, 92, 246, 0.05)
+        );
+
+    box-sizing: border-box;
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.8rem;
+
+    background: rgba(251, 191, 36, 0.1);
+
+    color: #fbbf24;
+
+    font-size: 1.4rem;
+}
+
+.progress-achievement > div:nth-child(2) span {
+    color: #fbbf24;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.progress-achievement h3 {
+    margin: 0.25rem 0;
+
+    color: #f1f5f9;
+
+    font-size: 0.95rem;
+}
+
+.progress-achievement p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.7rem;
+}
+
+.achievement-progress {
+    text-align: right;
+}
+
+.achievement-progress strong {
+    display: block;
+
+    margin-bottom: 0.45rem;
+
+    color: #fbbf24;
+
+    font-size: 0.8rem;
+}
+
+.achievement-progress > div {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #29293d;
+}
+
+.achievement-progress > div span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #f59e0b;
+}
+
+
+/* =========================================================
+   SKILL DETAILS MODAL
+========================================================= */
+
+.skill-details-overlay {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    z-index: 99999 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 1.25rem !important;
+
+    box-sizing: border-box !important;
+
+    background: rgba(0, 0, 0, 0.65) !important;
+
+    backdrop-filter: blur(6px) !important;
+
+    animation: skillModalFade 0.2s ease;
+}
+
+
+/* MODAL */
+
+.skill-details-modal {
+    width: 100% !important;
+
+    max-width: 500px !important;
+
+    max-height:
+        calc(100vh - 2.5rem) !important;
+
+    overflow-y: auto !important;
+
+    padding: 1.5rem !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+
+    border-radius: 1.25rem !important;
+
+    background: #19192d !important;
+
+    color: #e2e8f0 !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.5) !important;
+
+    animation: skillModalSlide 0.25s ease;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.skill-details-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.skill-details-header span {
+    display: block;
+
+    margin-bottom: 0.3rem;
+
+    color: #a78bfa;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+}
+
+.skill-details-header h2 {
+    margin: 0;
+
+    color: #f1f5f9;
+
+    font-size: 1.4rem;
+}
+
+.skill-details-close {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+
+    border-radius: 0.65rem;
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #94a3b8;
+
+    cursor: pointer;
+
+    font-size: 1.15rem;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.skill-details-close:hover {
+    background: rgba(139, 92, 246, 0.16);
+
+    color: #f1f5f9;
+}
+
+
+/* =========================================================
+   MODAL MAIN PROGRESS
+========================================================= */
+
+.skill-details-main {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 0.6rem;
+
+    margin-bottom: 0.7rem;
+}
+
+.skill-details-percentage {
+    color: #a78bfa;
+
+    font-size: 2.2rem;
+
+    font-weight: 800;
+}
+
+.skill-details-main span {
+    color: #64748b;
+
+    font-size: 0.8rem;
+}
+
+.skill-details-progress-track {
+    width: 100%;
+
+    height: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 1.5rem;
+
+    border-radius: 999px;
+
+    background: #29293d;
+}
+
+.skill-details-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+}
+
+.skill-details-progress-fill.purple {
+    background: #8b5cf6;
+}
+
+.skill-details-progress-fill.green {
+    background: #10b981;
+}
+
+.skill-details-progress-fill.yellow {
+    background: #f59e0b;
+}
+
+.skill-details-progress-fill.cyan {
+    background: #06b6d4;
+}
+
+
+/* =========================================================
+   MODAL STATS
+========================================================= */
+
+.skill-details-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 0.75rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.skill-details-stats > div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+
+    min-width: 0;
+
+    padding: 1rem 0.5rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.15);
+
+    border-radius: 0.8rem;
+
+    background: rgba(139, 92, 246, 0.05);
+
+    text-align: center;
+}
+
+.skill-details-stats svg {
+    color: #a78bfa;
+
+    font-size: 1.2rem;
+}
+
+.skill-details-stats strong {
+    color: #f1f5f9;
+
+    font-size: 1.1rem;
+}
+
+.skill-details-stats span {
+    color: #64748b;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   MODAL ACTIVITY
+========================================================= */
+
+.skill-details-activity {
+    margin-bottom: 1.25rem;
+}
+
+.skill-details-activity h3 {
+    margin: 0 0 0.7rem;
+
+    color: #f1f5f9;
+
+    font-size: 0.9rem;
+}
+
+.skill-details-activity > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    padding: 0.65rem 0;
+
+    border-bottom:
+        1px solid rgba(139, 92, 246, 0.1);
+
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+}
+
+.skill-details-activity > div:last-child {
+    border-bottom: none;
+}
+
+.skill-details-activity svg {
+    flex-shrink: 0;
+
+    color: #34d399;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   MODAL DONE BUTTON
+========================================================= */
+
+.skill-details-done-btn {
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+
+    border: 1px solid rgba(139, 92, 246, 0.3);
+
+    border-radius: 0.7rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #0891b2
+        );
+
+    color: white;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.skill-details-done-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light .progress-page {
+    color: #0f172a;
+}
+
+
+/* HERO */
+
+body.light .progress-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #f5f3ff,
+            #eff6ff,
+            #ecfeff
+        );
+
+    border-color: #ddd6fe;
+}
+
+body.light .progress-hero h1 {
+    color: #0f172a;
+}
+
+body.light .progress-hero p {
+    color: #64748b;
+}
+
+
+/* CARDS */
+
+body.light .overall-progress-card,
+body.light .progress-stat-card,
+body.light .skill-progress-card,
+body.light .recent-activity-card {
+    background: #ffffff;
+
+    border-color: #e2e8f0;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+
+/* HEADINGS */
+
+body.light .overall-progress-header h2,
+body.light .progress-section-heading h2,
+body.light .skill-progress-top strong,
+body.light .progress-stat-card strong,
+body.light .activity-content strong,
+body.light .progress-achievement h3 {
+    color: #0f172a;
+}
+
+
+/* SECONDARY TEXT */
+
+body.light .progress-label,
+body.light .progress-stat-card span,
+body.light .progress-section-heading p,
+body.light .skill-progress-top span,
+body.light .activity-content span {
+    color: #64748b;
+}
+
+
+/* TRACKS */
+
+body.light .overall-progress-bar,
+body.light .skill-progress-track,
+body.light .achievement-progress > div {
+    background: #e2e8f0;
+}
+
+
+/* STREAK */
+
+body.light .streak-card {
+    background:
+        linear-gradient(
+            145deg,
+            #fff7ed,
+            #ffffff
+        );
+
+    border-color: #fed7aa;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+body.light .streak-label,
+body.light .streak-card p {
+    color: #64748b;
+}
+
+body.light .streak-day i {
+    background: #e2e8f0;
+}
+
+
+/* ACTIVITY */
+
+body.light .activity-item {
+    border-bottom-color: #e2e8f0;
+}
+
+
+/* ACHIEVEMENT */
+
+body.light .progress-achievement {
+    background:
+        linear-gradient(
+            135deg,
+            #fffbeb,
+            #f5f3ff
+        );
+
+    border-color: #fde68a;
+}
+
+body.light .progress-achievement p {
+    color: #64748b;
+}
+
+
+/* CLICKABLE SKILL */
+
+body.light .skill-progress-item:hover {
+    background: rgba(124, 58, 237, 0.05);
+}
+
+
+/* =========================================================
+   LIGHT THEME - MODAL
+========================================================= */
+
+body.light .skill-details-overlay {
+    background:
+        rgba(15, 23, 42, 0.35) !important;
+}
+
+body.light .skill-details-modal {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #e2e8f0 !important;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.2) !important;
+}
+
+body.light .skill-details-header h2,
+body.light .skill-details-stats strong,
+body.light .skill-details-activity h3 {
+    color: #0f172a;
+}
+
+body.light .skill-details-header span {
+    color: #7c3aed;
+}
+
+body.light .skill-details-close {
+    background: #f8fafc;
+
+    border-color: #e2e8f0;
+
+    color: #64748b;
+}
+
+body.light .skill-details-close:hover {
+    background: #f1f5f9;
+
+    color: #0f172a;
+}
+
+body.light .skill-details-main span,
+body.light .skill-details-stats span,
+body.light .skill-details-activity > div {
+    color: #64748b;
+}
+
+body.light .skill-details-progress-track {
+    background: #e2e8f0;
+}
+
+body.light .skill-details-stats > div {
+    background: #f8fafc;
+
+    border-color: #e2e8f0;
+}
+
+body.light .skill-details-activity > div {
+    border-bottom-color: #e2e8f0;
+}
+
+
+/* =========================================================
+   MODAL ANIMATION
+========================================================= */
+
+@keyframes skillModalFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes skillModalSlide {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+    .progress-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .progress-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .streak-card {
+        text-align: left;
+    }
+
+    .streak-icon {
+        margin-left: 0;
+    }
+
+    .streak-week {
+        max-width: 400px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .progress-page {
+        padding: 1rem;
+
+        gap: 1rem;
+    }
+
+    .progress-hero {
+        padding: 1.5rem;
+    }
+
+    .progress-hero h1 {
+        font-size: 2rem;
+    }
+
+    .progress-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 0.75rem;
+    }
+
+    .progress-stat-card {
+        padding: 1rem;
+    }
+
+    .overall-progress-card,
+    .skill-progress-card,
+    .streak-card,
+    .recent-activity-card {
+        padding: 1.25rem;
+    }
+
+    .progress-achievement {
+        grid-template-columns:
+            auto minmax(0, 1fr);
+    }
+
+    .achievement-progress {
+        grid-column: 1 / -1;
+
+        text-align: left;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .progress-page {
+        padding: 0.75rem;
+    }
+
+    .progress-hero {
+        align-items: flex-start;
+
+        padding: 1.25rem;
+    }
+
+    .progress-hero-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 1.5rem;
+    }
+
+    .progress-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .progress-hero p {
+        font-size: 0.85rem;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .overall-progress-header {
+        align-items: flex-start;
+    }
+
+    .overall-percentage {
+        font-size: 1.6rem;
+    }
+
+    .overall-progress-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .progress-goal {
+        flex-direction: column;
+
+        gap: 0.3rem;
+    }
+
+    .skill-progress-top strong {
+        font-size: 0.82rem;
+    }
+
+    .progress-achievement {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .achievement-progress {
+        grid-column: auto;
+    }
+
+
+    /* MODAL */
+
+    .skill-details-overlay {
+        align-items: flex-end !important;
+
+        padding: 0.75rem !important;
+    }
+
+    .skill-details-modal {
+        max-height: 90vh !important;
+
+        padding: 1.25rem !important;
+
+        border-radius: 1.1rem !important;
+    }
+
+    .skill-details-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .skill-details-percentage {
+        font-size: 1.9rem;
+    }
+
+    .skill-details-stats {
+        gap: 0.5rem;
+    }
+
+    .skill-details-stats > div {
+        padding: 0.8rem 0.3rem;
+    }
+}

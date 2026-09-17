@@ -1,0 +1,324 @@
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.profile-page > * {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light .profile-page {
+    color: #0f172a;
+}
+
+
+/* =========================================================
+   PROFILE CARDS
+========================================================= */
+
+body.light .profile-page .glass-card,
+body.light .profile-page .card {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =========================================================
+   PROFILE TOP SECTION
+========================================================= */
+
+body.light .profile-page .glass-card:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            #f5f3ff 0%,
+            #eff6ff 55%,
+            #ecfeff 100%
+        ) !important;
+
+    border-color: #ddd6fe !important;
+}
+
+
+/* =========================================================
+   HEADINGS & TEXT
+========================================================= */
+
+body.light .profile-page h1,
+body.light .profile-page h2,
+body.light .profile-page h3,
+body.light .profile-page h4 {
+    color: #0f172a !important;
+}
+
+body.light .profile-page p {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   PROFILE NAME
+========================================================= */
+
+body.light .profile-page .profile-name {
+    color: #0f172a !important;
+}
+
+
+/* =========================================================
+   PROFILE STATS
+========================================================= */
+
+body.light .profile-page .profile-stats {
+    color: #0f172a !important;
+}
+
+body.light .profile-page .profile-stats p,
+body.light .profile-page .profile-stats span {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   PROFILE COMPLETION
+========================================================= */
+
+body.light .profile-page .profile-completion,
+body.light .profile-page .completion-card,
+body.light .profile-page .completion-section {
+    background: #f8fafc !important;
+
+    border: 1px solid #e2e8f0 !important;
+
+    color: #475569 !important;
+}
+
+
+/* Completion content */
+body.light .profile-page .profile-completion *,
+body.light .profile-page .completion-card *,
+body.light .profile-page .completion-section * {
+    color: #475569 !important;
+}
+
+
+/* Completion percentage */
+body.light .profile-page .profile-completion strong,
+body.light .profile-page .completion-card strong,
+body.light .profile-page .completion-section strong {
+    color: #10b981 !important;
+}
+
+
+/* Progress track */
+body.light .profile-page .profile-completion .progress-bar,
+body.light .profile-page .profile-completion .progress-track,
+body.light .profile-page .completion-card .progress-bar,
+body.light .profile-page [role="progressbar"] {
+    background: #e2e8f0 !important;
+}
+
+
+/* Progress fill */
+body.light .profile-page .profile-completion .progress-fill {
+    background: #34d399 !important;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+body.light .profile-page .skill-tag,
+body.light .profile-page .skill-chip {
+    background: #f1f5f9 !important;
+
+    color: #7c3aed !important;
+
+    border-color: #e2e8f0 !important;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+body.light .profile-page .achievements-card {
+    background: #ffffff !important;
+
+    color: #0f172a !important;
+
+    border-color: #e2e8f0 !important;
+}
+
+body.light .profile-page .achievements-card p {
+    color: #475569 !important;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+body.light .profile-page .social-links-card {
+    background: #ffffff !important;
+
+    border-color: #e2e8f0 !important;
+}
+
+body.light .profile-page .social-link {
+    background: #f0f9ff !important;
+
+    color: #0284c7 !important;
+
+    border-color: #e0f2fe !important;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+body.light .profile-page .about-card {
+    background: #ffffff !important;
+
+    border-color: #e2e8f0 !important;
+
+    color: #0f172a !important;
+}
+
+body.light .profile-page .about-card .about-label {
+    color: #64748b !important;
+}
+
+body.light .profile-page .about-card .about-value {
+    color: #334155 !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+body.light .profile-page button {
+    color: #334155;
+}
+
+body.light .profile-page button[class*="primary"],
+body.light .profile-page button[class*="edit"] {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .profile-page {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        padding: 1rem !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow-x: hidden !important;
+    }
+
+    .profile-page > * {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* Profile grids */
+    .profile-page .profile-grid,
+    .profile-page .profile-content-grid,
+    .profile-page .skills-grid,
+    .profile-page .profile-bottom-grid {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+    }
+
+
+    /* Any inline 2-column grid */
+    .profile-page [style*="grid-template-columns"] {
+        grid-template-columns:
+            minmax(0, 1fr) !important;
+    }
+
+
+    /* Cards */
+    .profile-page .glass-card {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* Achievements */
+    .profile-page .achievements-card {
+        min-height: auto !important;
+    }
+
+
+    /* Social */
+    .profile-page .social-links-card {
+        width: 100% !important;
+    }
+
+
+    /* About */
+    .profile-page .about-card {
+        width: 100% !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .profile-page {
+        padding: 0.75rem !important;
+    }
+
+    .profile-page .glass-card {
+        padding: 1rem !important;
+    }
+
+    .profile-page h2,
+    .profile-page h3 {
+        font-size: 1rem !important;
+    }
+}

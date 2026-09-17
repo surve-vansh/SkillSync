@@ -1,0 +1,110 @@
+.admin-layout {
+    min-height: 100vh;
+
+    background: var(--page-bg, #08080d);
+
+    color: var(--text-primary, #e2e8f0);
+}
+
+.admin-main-content {
+    min-height: 100vh;
+
+    margin-left: 220px;
+
+    background: var(--page-bg, #08080d);
+
+    transition:
+        margin-left 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.admin-page-container {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* Mobile Header */
+
+.admin-mobile-header {
+    display: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .admin-main-content {
+        margin-left: 0 !important;
+
+        width: 100%;
+    }
+
+    .admin-mobile-header {
+        display: flex;
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 30;
+
+        height: 58px;
+
+        padding: 0 1rem;
+
+        align-items: center;
+
+        gap: 0.8rem;
+
+        background:
+            var(--header-bg, rgba(10, 10, 15, 0.92));
+
+        border-bottom:
+            1px solid
+            var(--border-color, rgba(42, 42, 61, 0.5));
+
+        backdrop-filter: blur(20px);
+    }
+
+    .admin-mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 0.65rem;
+
+        background:
+            rgba(139, 92, 246, 0.1);
+
+        color: #a78bfa;
+
+        cursor: pointer;
+    }
+
+    .admin-mobile-logo {
+        font-size: 1.05rem;
+        font-weight: 800;
+
+        background:
+            linear-gradient(
+                135deg,
+                #a78bfa,
+                #22d3ee
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        color: transparent;
+    }
+}

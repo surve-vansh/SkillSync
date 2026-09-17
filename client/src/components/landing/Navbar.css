@@ -1,0 +1,125 @@
+.navbar-wrapper {
+  background: #f4f5f7; 
+  position: relative;
+  z-index: 50;
+}
+.dark .navbar-wrapper {
+  background: #040816;
+}
+
+/* Light Mode Glassmorphism - Polished */
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 10px 28px rgba(99, 102, 241, 0.08),
+    0 3px 12px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Scrolled State */
+.navbar-glass.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 15px 35px rgba(99, 102, 241, 0.12),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Navigation Links */
+.navbar-link {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #06b6d4; Cyan
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.8);
+} */
+
+.navbar-link:hover {
+  color: #06b6d4 !important;
+  transform: translateY(-2px);
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+.navbar-link.active {
+  color: #06b6d4 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+  transform: none;
+}
+/* Theme Toggle Button Glow */
+.theme-btn {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.theme-btn:hover {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+}
+
+/* Get Started Button */
+.start-btn {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+}
+.start-btn:hover {
+  box-shadow: 0 12px 28px rgba(147, 51, 234, 0.4), 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+/* Dark Mode Overrides - Keeping the Neon Glow */
+.dark .navbar-glass {
+  background: rgba(8, 14, 32, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(56, 189, 248, 0.7);
+  box-shadow:
+    0 0 20px rgba(147, 51, 234, 0.4),
+    0 0 40px rgba(147, 51, 234, 0.3),
+    inset 0 0 15px rgba(147, 51, 234, 0.15);
+}
+
+.dark .navbar-glass.scrolled {
+  background: rgba(8, 14, 32, 0.8);
+  border-color: rgba(56, 189, 248, 0.9);
+  box-shadow:
+    0 0 30px rgba(147, 51, 234, 0.6),
+    0 0 60px rgba(147, 51, 234, 0.4),
+    inset 0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+.dark .theme-btn {
+  background: rgba(8, 14, 32, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+}
+
+.dark .start-btn {
+  border: 1px solid #7dd3fc;
+  box-shadow: 0 0 12px 2px rgba(147, 51, 234, 0.7);
+}
+.dark .start-btn:hover {
+  box-shadow: 0 0 20px 4px rgba(147, 51, 234, 0.9), 0 0 15px rgba(56, 189, 248, 0.8);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 620px) {
+  .navbar-glass {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

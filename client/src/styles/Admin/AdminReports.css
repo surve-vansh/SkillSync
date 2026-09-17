@@ -1,0 +1,515 @@
+/* =========================================================
+   REPORTS PAGE
+========================================================= */
+
+.admin-reports-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    color: #e2e8f0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.reports-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.reports-top h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.reports-top p {
+    margin-top: 0.5rem;
+    color: #94a3b8;
+}
+
+.reports-filter {
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 0.9rem;
+    border: 1px solid #2d2850;
+    background: #18172b;
+    color: #e2e8f0;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.reports-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.reports-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1.3rem;
+
+    background: #18172b;
+    border: 1px solid #2d2850;
+    border-radius: 1rem;
+
+    transition: 0.25s ease;
+}
+
+.reports-stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.reports-stat-icon {
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1rem;
+
+    background: rgba(139, 92, 246, 0.18);
+    color: #8b5cf6;
+    font-size: 1.5rem;
+}
+
+.reports-stat-card h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #f8fafc;
+}
+
+.reports-stat-card p {
+    margin: 0.25rem 0 0;
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.reports-card {
+    background: #18172b;
+    border: 1px solid #2d2850;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.reports-card h3 {
+    margin: 0 0 1.5rem;
+    color: #f8fafc;
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   MIDDLE GRID
+========================================================= */
+
+.reports-middle-grid {
+    display: grid;
+    /* grid-template-columns: 1.2fr 1fr; */
+    gap: 1rem;  
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-header span:first-child {
+    color: #f8fafc;
+}
+
+.skill-header span:last-child {
+    color: #cbd5e1;
+}
+
+.skill-bar {
+    height: 10px;
+    border-radius: 999px;
+    background: #262347;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #a855f7
+    );
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.session-chart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.session-chart {
+    width: 240px;
+    height: 240px;
+}
+
+.session-legend {
+    flex: 1;
+}
+
+.legend-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.legend-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-row strong {
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   MEMBERSHIP
+========================================================= */
+
+.membership-card {
+    margin-bottom: 1.5rem;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.membership-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.membership-item p {
+    margin: 0;
+    color: #94a3b8;
+}
+
+.membership-item h2 {
+    margin: 0.3rem 0 0;
+    color: #f8fafc;
+}
+
+.membership-icon {
+    width: 4rem;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 1.4rem;
+}
+
+.membership-icon.purple {
+    background: rgba(139,92,246,0.18);
+    color: #8b5cf6;
+}
+
+.membership-icon.gold {
+    background: rgba(251,191,36,0.15);
+    color: #fbbf24;
+}
+
+.membership-icon.green {
+    background: rgba(52,211,153,0.12);
+    color: #34d399;
+}
+
+.membership-icon.red {
+    background: rgba(244,63,94,0.12);
+    color: #f43f5e;
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(45,40,80,0.7);
+}
+
+.activity-row:last-child {
+    border-bottom: none;
+}
+
+.activity-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.activity-icon {
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(139,92,246,0.15);
+}
+
+.activity-time {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light .admin-reports-page {
+    color: #0f172a;
+}
+
+body.light .reports-top h1,
+body.light .reports-card h3,
+body.light .reports-stat-card h2,
+body.light .membership-item h2,
+body.light .legend-row strong {
+    color: #0f172a;
+}
+
+body.light .reports-top p,
+body.light .membership-item p,
+body.light .activity-time {
+    color: #64748b;
+}
+
+body.light .reports-card,
+body.light .reports-stat-card,
+body.light .reports-filter {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light .skill-bar {
+    background: #e2e8f0;
+}
+
+body.light .activity-row {
+    border-color: #e2e8f0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .reports-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .membership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .reports-middle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-chart-wrapper {
+        flex-direction: column;
+    }
+
+    .session-chart {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .admin-reports-page {
+        padding: 1rem;
+    }
+
+    .reports-top {
+        flex-direction: column;
+    }
+
+    .reports-filter {
+        width: 100%;
+    }
+
+    .reports-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-top h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .admin-reports-page {
+        padding: 0.75rem;
+    }
+
+    .reports-top h1 {
+        font-size: 1.4rem;
+    }
+
+    .reports-card,
+    .reports-stat-card {
+        padding: 1rem;
+    }
+}
+.reports-bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.reports-half {
+  width: 100%;
+}
+
+.recent-activity-card,
+.platform-summary-card {
+  background: #17172b;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.recent-activity-card h3,
+.platform-summary-card h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.activity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  flex-shrink: 0;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.summary-box {
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.summary-box h4 {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.summary-box span {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .reports-bottom-section {
+    grid-template-columns: 1fr;
+  }
+}

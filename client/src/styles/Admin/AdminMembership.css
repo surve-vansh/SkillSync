@@ -1,0 +1,674 @@
+/* =========================================================
+   ADMIN MEMBERSHIP PAGE
+========================================================= */
+
+.admin-membership-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    box-sizing: border-box;
+
+    color: var(--membership-text);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.membership-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+.membership-page-header h1 {
+    display: flex;
+    align-items: center;
+
+    gap: 0.65rem;
+
+    margin: 0;
+
+    color: var(--membership-heading);
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.membership-page-header h1 svg {
+    color: #f59e0b;
+
+    font-size: 2rem;
+}
+
+.membership-page-header p {
+    margin: 0.45rem 0 0;
+
+    color: var(--membership-muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   ADD PLAN BUTTON
+========================================================= */
+
+.add-plan-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    min-width: 9rem;
+
+    padding: 0.85rem 1.25rem;
+
+    border: none;
+    border-radius: 0.75rem;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #06b6d4
+    );
+
+    color: white;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.add-plan-btn span {
+    font-size: 1.25rem;
+}
+
+.add-plan-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+
+.membership-overview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1rem;
+
+    margin-bottom: 2.5rem;
+}
+
+.membership-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.25rem;
+
+    border: 1px solid var(--membership-border);
+    border-radius: 1rem;
+
+    background: var(--membership-card);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.membership-stat-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(139, 92, 246, 0.35);
+}
+
+.membership-stat-icon {
+    width: 3rem;
+    height: 3rem;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.8rem;
+
+    font-size: 1.5rem;
+}
+
+.membership-stat-icon.total {
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+}
+
+.membership-stat-icon.premium {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+}
+
+.membership-stat-icon.free {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+}
+
+.membership-stat-card span {
+    display: block;
+
+    color: var(--membership-muted);
+
+    font-size: 0.82rem;
+}
+
+.membership-stat-card strong {
+    display: block;
+
+    margin-top: 0.2rem;
+
+    color: var(--membership-heading);
+
+    font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.membership-section-header {
+    margin-bottom: 1.2rem;
+}
+
+.membership-section-header h2 {
+    margin: 0;
+
+    color: var(--membership-heading);
+
+    font-size: 1.35rem;
+    font-weight: 750;
+}
+
+.membership-section-header p {
+    margin: 0.3rem 0 0;
+
+    color: var(--membership-muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   PLANS GRID
+========================================================= */
+
+.membership-plans-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 950px;
+}
+
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.membership-plan-card {
+    position: relative;
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--membership-border);
+    border-radius: 1rem;
+
+    background: var(--membership-card);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.membership-plan-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+
+/* Premium */
+
+.membership-plan-card.premium-plan {
+    border-color: rgba(245, 158, 11, 0.35);
+
+    box-shadow:
+        0 10px 35px rgba(245, 158, 11, 0.06);
+}
+
+
+/* Disabled */
+
+.membership-plan-card.plan-disabled {
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   PLAN TOP
+========================================================= */
+
+.plan-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1rem;
+}
+
+.plan-icon {
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.8rem;
+
+    background: rgba(139, 92, 246, 0.12);
+
+    color: #a78bfa;
+
+    font-size: 1.5rem;
+}
+
+.premium-plan .plan-icon {
+    background: rgba(245, 158, 11, 0.12);
+
+    color: #fbbf24;
+}
+
+
+/* Popular */
+
+.popular-badge {
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    background: rgba(245, 158, 11, 0.12);
+
+    border: 1px solid rgba(245, 158, 11, 0.25);
+
+    color: #fbbf24;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PLAN CONTENT
+========================================================= */
+
+.membership-plan-card h3 {
+    margin: 0;
+
+    color: var(--membership-heading);
+
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.plan-description {
+    min-height: 2.7rem;
+
+    margin: 0.45rem 0 1.2rem;
+
+    color: var(--membership-muted);
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+
+    gap: 0.3rem;
+
+    margin-bottom: 1.4rem;
+}
+
+.plan-price strong {
+    color: var(--membership-heading);
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.premium-plan .plan-price strong {
+    color: #fbbf24;
+}
+
+.plan-price span {
+    color: var(--membership-muted);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.plan-features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    padding: 1.1rem 0;
+
+    border-top: 1px solid var(--membership-border);
+    border-bottom: 1px solid var(--membership-border);
+}
+
+.plan-feature {
+    display: flex;
+    align-items: center;
+
+    gap: 0.55rem;
+}
+
+.plan-feature svg {
+    flex-shrink: 0;
+
+    color: #34d399;
+
+    font-size: 1.05rem;
+}
+
+.plan-feature span {
+    color: var(--membership-muted);
+
+    font-size: 0.84rem;
+}
+
+
+/* =========================================================
+   PLAN FOOTER
+========================================================= */
+
+.plan-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+.plan-members {
+    display: flex;
+    align-items: center;
+
+    gap: 0.4rem;
+
+    color: var(--membership-muted);
+
+    font-size: 0.8rem;
+}
+
+.plan-members svg {
+    font-size: 1rem;
+}
+
+
+/* Status */
+
+.plan-status {
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.plan-status.active {
+    background: rgba(16, 185, 129, 0.12);
+
+    border: 1px solid rgba(16, 185, 129, 0.25);
+
+    color: #34d399;
+}
+
+.plan-status.inactive {
+    background: rgba(148, 163, 184, 0.1);
+
+    border: 1px solid rgba(148, 163, 184, 0.2);
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   PLAN ACTIONS
+========================================================= */
+
+.plan-actions {
+    display: flex;
+
+    gap: 0.7rem;
+
+    margin-top: 1.1rem;
+}
+
+.plan-actions button {
+    flex: 1;
+
+    min-height: 2.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    border-radius: 0.7rem;
+
+    font-family: inherit;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.plan-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Edit */
+
+.edit-plan-btn {
+    border: 1px solid var(--membership-border);
+
+    background: transparent;
+
+    color: var(--membership-text);
+}
+
+.edit-plan-btn:hover {
+    background: rgba(139, 92, 246, 0.08);
+
+    border-color: #8b5cf6;
+
+    color: #a78bfa;
+}
+
+
+/* Disable */
+
+.disable-plan-btn {
+    border: 1px solid rgba(244, 63, 94, 0.25);
+
+    background: rgba(244, 63, 94, 0.07);
+
+    color: #fb7185;
+}
+
+.disable-plan-btn:hover {
+    background: rgba(244, 63, 94, 0.13);
+}
+
+
+/* Enable */
+
+.enable-plan-btn {
+    border: 1px solid rgba(16, 185, 129, 0.25);
+
+    background: rgba(16, 185, 129, 0.08);
+
+    color: #34d399;
+}
+
+.enable-plan-btn:hover {
+    background: rgba(16, 185, 129, 0.14);
+}
+
+
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+
+:root {
+    --membership-text: #e2e8f0;
+    --membership-heading: #f8fafc;
+    --membership-muted: #94a3b8;
+    --membership-card: #18172b;
+    --membership-border: #2d2850;
+}
+
+
+/* Light */
+
+html:not(.dark) {
+    --membership-text: #334155;
+    --membership-heading: #0f172a;
+    --membership-muted: #64748b;
+    --membership-card: #ffffff;
+    --membership-border: #e2e8f0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .membership-overview {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .membership-plans-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .admin-membership-page {
+        padding: 1.25rem;
+    }
+
+    .membership-page-header {
+        flex-direction: column;
+    }
+
+    .membership-page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .add-plan-btn {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .admin-membership-page {
+        padding: 1rem;
+    }
+
+    .membership-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-page-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .membership-page-header h1 svg {
+        font-size: 1.5rem;
+    }
+
+    .membership-page-header p {
+        font-size: 0.85rem;
+    }
+
+    .membership-plan-card {
+        padding: 1.2rem;
+    }
+
+    .plan-actions {
+        flex-direction: column;
+    }
+
+    .plan-actions button {
+        width: 100%;
+    }
+}

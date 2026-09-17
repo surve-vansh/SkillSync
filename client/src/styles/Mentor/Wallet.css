@@ -1,0 +1,353 @@
+/* =============================================
+   MENTOR WALLET PAGE — Skill Coin Wallet
+============================================= */
+
+.mentor-wallet-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── HEADER ─── */
+
+.wallet-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wallet-topbar h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet-topbar p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ─── BALANCE CARD ─── */
+
+.wallet-balance-card {
+  background: linear-gradient(135deg, #1a1207 0%, #241708 50%, #1a1207 100%);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.wallet-balance-label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.wallet-balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+.wallet-coin-icon {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.wallet-balance-amount {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #fbbf24;
+  line-height: 1;
+}
+
+.wallet-balance-sublabel {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.wallet-balance-meta {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.wallet-meta-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.wallet-meta-stat-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.wallet-meta-stat-val.earned { color: #34d399; }
+.wallet-meta-stat-val.spent  { color: #f87171; }
+
+.wallet-meta-stat-label {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* ─── MINI STAT CARDS ─── */
+
+.wallet-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.wallet-stat-card {
+  background: #11182f;
+  border-radius: 20px;
+  padding: 20px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wallet-stat-card-icon {
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wallet-stat-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin: 0;
+  line-height: 1;
+}
+
+.wallet-stat-card p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* ─── COIN ACTIVITY CHART ─── */
+
+.wallet-activity-card {
+  background: #11182f;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wallet-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+/* ─── TRANSACTION HISTORY ─── */
+
+.wallet-history-card {
+  background: #11182f;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wallet-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ─── FILTER TABS ─── */
+
+.wallet-filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.wallet-filter-tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.wallet-filter-tab.active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #a78bfa;
+}
+
+.wallet-filter-tab:hover:not(.active) {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+}
+
+/* ─── TRANSACTION ITEMS ─── */
+
+.wallet-txn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.wallet-txn-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wallet-txn-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.wallet-txn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: #34d399;
+}
+
+.wallet-txn-icon.debit {
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+}
+
+.wallet-txn-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wallet-txn-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 2px;
+}
+
+.wallet-txn-info span {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.wallet-txn-amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.wallet-txn-amount.debit { color: #f87171; }
+
+.wallet-txn-amount .txn-coin { font-size: 1rem; }
+
+/* ─── CHART TOOLTIP ─── */
+
+.wallet-tooltip {
+  background: #151c35;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.wallet-tooltip p {
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+}
+
+.wallet-tooltip span {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 992px) {
+  .wallet-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .wallet-topbar h1 { font-size: 1.8rem; }
+  .wallet-balance-amount { font-size: 3rem; }
+  .wallet-stats { grid-template-columns: repeat(2, 1fr); }
+  .wallet-history-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* ─── LIGHT MODE ─── */
+
+body.light .wallet-topbar h1 { color: #111827; }
+body.light .wallet-topbar p { color: #64748b; }
+
+body.light .wallet-balance-card {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fffbeb 100%);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+body.light .wallet-balance-label,
+body.light .wallet-balance-sublabel { color: #92400e; }
+
+body.light .wallet-stat-card,
+body.light .wallet-activity-card,
+body.light .wallet-history-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0,0,0,.05);
+}
+
+body.light .wallet-stat-card h3 { color: #b45309; }
+body.light .wallet-stat-card p { color: #64748b; }
+body.light .wallet-card-title { color: #111827; }
+body.light .wallet-filter-tab { border-color: #e2e8f0; color: #64748b; }
+body.light .wallet-filter-tab.active {
+  background: #f3e8ff;
+  border-color: #c4b5fd;
+  color: #7c3aed;
+}
+body.light .wallet-txn-item { border-color: #f1f5f9; }
+body.light .wallet-txn-info h4 { color: #111827; }
+body.light .wallet-txn-info span { color: #9ca3af; }

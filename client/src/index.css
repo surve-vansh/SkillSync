@@ -1,0 +1,1222 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+      margin: 0;
+
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    min-height: 100vh;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* @import "tailwindcss"; */
+
+/* ─────────────────────────────────────────────────────────
+   SKILLSYNC DESIGN SYSTEM
+   Dark/Light mode, Purple + Cyan palette, Glassmorphism
+───────────────────────────────────────────────────────── */
+
+@theme {
+  /* Colors */
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+
+  --color-dark-bg: #0a0a0f;
+  --color-dark-surface: #12121a;
+  --color-dark-card: #1a1a2e;
+  --color-dark-border: #2a2a3d;
+  --color-dark-text: #e2e8f0;
+  --color-dark-muted: #94a3b8;
+
+  --color-light-bg: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-card: #f1f5f9;
+  --color-light-border: #e2e8f0;
+  --color-light-text: #0f172a;
+  --color-light-muted: #64748b;
+
+  /* Fonts */
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+/* =========================================================
+   GLOBAL THEME VARIABLES
+========================================================= */
+
+:root {
+    /* DARK THEME - DEFAULT */
+
+    --page-bg: #08080d;
+    --surface-bg: #12121a;
+    --card-bg: #1a1a2e;
+    --border-color: #2a2a3d;
+
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    --input-bg: rgba(26, 26, 46, 0.8);
+
+    --sidebar-bg: #111118;
+    --header-bg: rgba(10, 10, 15, 0.92);
+
+    /* Extra theme variables */
+    --glass-bg: rgba(26, 26, 46, 0.8);
+    --glass-border: rgba(139, 92, 246, 0.15);
+
+    --table-bg: rgba(26, 26, 46, 0.9);
+
+    --hover-bg: rgba(139, 92, 246, 0.06);
+
+    --muted-bg: #1a1a2e;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+html.light,
+body.light {
+    --page-bg: #f8fafc;
+    --surface-bg: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --input-bg: #ffffff;
+
+    --sidebar-bg: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.95);
+
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(124, 58, 237, 0.15);
+
+    --table-bg: #ffffff;
+
+    --hover-bg: rgba(124, 58, 237, 0.05);
+
+    --muted-bg: #f1f5f9;
+}
+
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+   margin: 0;
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    min-height: 100vh;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }
+
+/* ─── Selection ─── */
+::selection { background: rgba(139, 92, 246, 0.3); color: #fff; }
+
+/* ─── Gradients ─── */
+.gradient-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+}
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-border {
+    border: 1px solid transparent;
+
+    background:
+        linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+        linear-gradient(135deg, #7c3aed, #06b6d4) border-box;
+}
+.gradient-glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3), 0 0 80px rgba(6, 182, 212, 0.1);
+}
+
+/* ─── Glassmorphism ─── */
+.glass {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.glass-card {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  background: transparent;
+  color: #a78bfa;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.2);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-dark-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-ghost:hover {
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-danger:hover {
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-success:hover {
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ─── Inputs ─── */
+.input {
+   background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+
+    padding: 0.625rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+
+    width: 100%;
+    transition: all 0.3s ease;
+    outline: none;
+
+    font-family: var(--font-sans);
+}
+.input:focus {
+ border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+.input::placeholder { color: var(--text-muted); }
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.375rem;
+  display: block;
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+.card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* ─── Badge / Chip ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-primary { background: rgba(139, 92, 246, 0.2); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.3); }
+.badge-cyan { background: rgba(6, 182, 212, 0.2); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-red { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.badge-yellow { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-gray { background: rgba(100, 116, 139, 0.2); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); }
+
+/* ─── Section titles ─── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.section-subtitle {
+  font-size: 1.1rem;
+   color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+
+/* ─── Stats cards ─── */
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+
+    border-radius: 1rem;
+    padding: 1.5rem;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+}
+
+/* ─── Avatar ─── */
+.avatar {
+  border-radius: 9999px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── Coin badge ─── */
+.coin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.1));
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ─── Progress bar ─── */
+.progress-bar {
+  height: 6px;
+   background: var(--border-color);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border-radius: 9999px;
+  transition: width 0.6s ease;
+}
+
+/* ─── Animations ─── */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); } 50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.6); } }
+
+.animate-fade-in { animation: fadeIn 0.5s ease forwards; }
+.animate-slide-left { animation: slideInLeft 0.5s ease forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-dark-border) 25%, rgba(139, 92, 246, 0.05) 50%, var(--color-dark-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+
+/* ─── Table ─── */
+.table-container { overflow-x: auto; border-radius: 1rem; }
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: rgba(26, 26, 46, 0.9);
+  color: var(--color-dark-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(42, 42, 61, 0.5);
+  font-size: 0.9rem;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(139, 92, 246, 0.03); }
+
+/* ─── Coin color ─── */
+.text-coin { color: #fbbf24; }
+.text-primary { color: #a78bfa; }
+.text-cyan { color: #22d3ee; }
+.text-success { color: #34d399; }
+.text-danger { color: #f87171; }
+.text-muted {color: var(--text-secondary); }
+
+/* ─── Divider ─── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  margin: 1.5rem 0;
+}
+
+/* ─── Tooltip ─── */
+[data-tooltip] { position: relative; }
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 15, 0.95);
+  color: #e2e8f0;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  z-index: 100;
+}
+[data-tooltip]:hover::after { opacity: 1; }
+
+/* Browse Skills Grid */
+
+/* =========================================================
+
+/* ─── Light mode overrides ─── */
+body.light .glass { background: rgba(255, 255, 255, 0.8); border-color: rgba(0,0,0,0.08); }
+body.light .glass-card { background: rgba(255, 255, 255, 0.9); border-color: rgba(124, 58, 237, 0.15); }
+body.light .card { background: #ffffff; border-color: #e2e8f0; }
+body.light .stat-card { background: #ffffff; border-color: #e2e8f0; }
+body.light .input { background: #ffffff; border-color: #e2e8f0; color: #0f172a; }
+body.light .section-subtitle { color: #64748b; }
+body.light .label { color: #475569; }
+body.light .skeleton { background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; }
+
+/* =========================================================
+   GLOBAL LIGHT THEME
+========================================================= */
+
+html.light,
+body.light {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   COMMON COMPONENTS
+========================================================= */
+
+html.light .glass,
+body.light .glass {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+}
+
+html.light .glass-card,
+body.light .glass-card {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    color: var(--text-primary);
+}
+
+html.light .card,
+body.light .card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+html.light .stat-card,
+body.light .stat-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+html.light .section-subtitle,
+body.light .section-subtitle {
+    color: var(--text-secondary);
+}
+
+html.light .label,
+body.light .label {
+    color: var(--text-secondary);
+}
+
+html.light .text-muted,
+body.light .text-muted {
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+html.light .input,
+body.light .input {
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+html.light .input::placeholder,
+body.light .input::placeholder {
+    color: var(--text-muted);
+}
+
+html.light .input:focus,
+body.light .input:focus {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+html.light .btn-ghost,
+body.light .btn-ghost {
+    color: var(--text-secondary);
+}
+
+html.light .btn-ghost:hover,
+body.light .btn-ghost:hover {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+html.light th,
+body.light th {
+    background: var(--table-bg);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+html.light td,
+body.light td {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+html.light tr:hover td,
+body.light tr:hover td {
+    background: var(--hover-bg);
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+html.light .progress-bar,
+body.light .progress-bar {
+    background: #e2e8f0;
+}
+
+
+/* =========================================================
+   SKELETON
+========================================================= */
+
+html.light .skeleton,
+body.light .skeleton {
+    background:
+        linear-gradient(
+            90deg,
+            #f1f5f9 25%,
+            #e2e8f0 50%,
+            #f1f5f9 75%
+        );
+
+    background-size: 200% 100%;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+html.light .sidebar,
+body.light .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+html.light .sidebar .nav-link,
+body.light .sidebar .nav-link {
+    color: var(--text-secondary);
+}
+
+html.light .sidebar .nav-link:hover,
+body.light .sidebar .nav-link:hover {
+    background: rgba(124, 58, 237, 0.06);
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+html.light .mobile-header,
+body.light .mobile-header {
+    background: var(--header-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   DASHBOARD / MAIN CONTENT
+========================================================= */
+
+html.light .main-content,
+body.light .main-content {
+    background: var(--page-bg);
+    color: var(--text-primary);
+}
+
+html.light .student-page-container,
+body.light .student-page-container {
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6 {
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+html.light select,
+body.light select {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+html.light option,
+body.light option {
+    background: #ffffff;
+    color: #0f172a;
+}
+/* =========================================================
+   LIGHT THEME - STUDENT PAGES FIX
+========================================================= */
+
+html.light,
+body.light {
+
+    --page-bg: #f8fafc;
+    --surface-bg: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --input-bg: #ffffff;
+
+    --sidebar-bg: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+html.light .main-content,
+body.light .main-content {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+html.light .student-page-container,
+body.light .student-page-container {
+    color: #0f172a !important;
+}
+
+
+/* =========================================================
+   FIND MENTORS
+========================================================= */
+
+/* Main mentor cards */
+html.light .mentor-card,
+html.light .mentor-card *,
+body.light .mentor-card,
+body.light .mentor-card * {
+    color: inherit;
+}
+
+html.light .mentor-card,
+body.light .mentor-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Mentor names */
+html.light .mentor-card h1,
+html.light .mentor-card h2,
+html.light .mentor-card h3,
+html.light .mentor-card h4,
+html.light .mentor-card h5,
+html.light .mentor-card h6,
+body.light .mentor-card h1,
+body.light .mentor-card h2,
+body.light .mentor-card h3,
+body.light .mentor-card h4,
+body.light .mentor-card h5,
+body.light .mentor-card h6 {
+    color: #0f172a !important;
+}
+
+
+/* Mentor description */
+html.light .mentor-card p,
+body.light .mentor-card p {
+    color: #64748b !important;
+}
+
+
+/* Filters */
+html.light .filters,
+html.light .filter-section,
+body.light .filters,
+body.light .filter-section {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+
+/* Select boxes */
+html.light select,
+html.light option,
+body.light select,
+body.light option {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+
+/* Find mentor search */
+html.light input,
+body.light input {
+    color: #0f172a;
+}
+
+html.light input::placeholder,
+body.light input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   BROWSE SKILLS
+========================================================= */
+
+html.light .skill-card,
+body.light .skill-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f8fafc 100%
+        ) !important;
+
+    border-color: #e2e8f0 !important;
+
+    color: #0f172a !important;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+/* Skill title */
+html.light .skill-card h3,
+body.light .skill-card h3 {
+    color: #0f172a !important;
+}
+
+
+/* Skill category */
+html.light .skill-category,
+body.light .skill-category {
+    background: rgba(124, 58, 237, 0.08);
+}
+
+
+/* Mentor count */
+html.light .mentor-count,
+body.light .mentor-count {
+    color: #64748b !important;
+}
+
+
+/* Find Mentors button */
+html.light .find-mentor-btn,
+body.light .find-mentor-btn {
+    background: rgba(124, 58, 237, 0.04) !important;
+}
+
+
+/* Skill grid result text */
+html.light .skills-result,
+body.light .skills-result {
+    color: #64748b !important;
+}
+
+
+/* Category buttons */
+html.light .category-btn,
+body.light .category-btn {
+    background: #ffffff !important;
+    color: #7c3aed !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light .category-btn.active,
+body.light .category-btn.active {
+    color: #ffffff !important;
+}
+
+
+/* Browse search */
+html.light .skills-search,
+body.light .skills-search {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+html.light .skills-search input,
+body.light .skills-search input {
+    background: transparent !important;
+    color: #0f172a !important;
+}
+
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+
+/* Profile top hero */
+html.light .profile-header,
+html.light .profile-hero,
+html.light .profile-banner,
+body.light .profile-header,
+body.light .profile-hero,
+body.light .profile-banner {
+    background:
+        linear-gradient(
+            135deg,
+            #f3e8ff 0%,
+            #eff6ff 50%,
+            #ecfeff 100%
+        ) !important;
+
+    border-color: #ddd6fe !important;
+    color: #0f172a !important;
+}
+
+
+/* Profile all headings */
+html.light .profile-header h1,
+html.light .profile-header h2,
+html.light .profile-header h3,
+html.light .profile-hero h1,
+html.light .profile-hero h2,
+html.light .profile-hero h3,
+body.light .profile-header h1,
+body.light .profile-header h2,
+body.light .profile-header h3,
+body.light .profile-hero h1,
+body.light .profile-hero h2,
+body.light .profile-hero h3 {
+    color: #0f172a !important;
+}
+
+
+/* Profile normal text */
+html.light .profile-header p,
+html.light .profile-hero p,
+body.light .profile-header p,
+body.light .profile-hero p {
+    color: #64748b !important;
+}
+
+
+/* Profile cards */
+html.light .profile-card,
+html.light .profile-section,
+body.light .profile-card,
+body.light .profile-section {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+
+/* Profile card headings */
+html.light .profile-card h2,
+html.light .profile-card h3,
+html.light .profile-section h2,
+html.light .profile-section h3,
+body.light .profile-card h2,
+body.light .profile-card h3,
+body.light .profile-section h2,
+body.light .profile-section h3 {
+    color: #0f172a !important;
+}
+
+
+/* Profile card text */
+html.light .profile-card p,
+html.light .profile-section p,
+body.light .profile-card p,
+body.light .profile-section p {
+    color: #475569 !important;
+}
+
+
+/* =========================================================
+   PROFILE COMPLETION
+========================================================= */
+
+html.light .profile-completion,
+html.light .completion-card,
+html.light .completion-section,
+body.light .profile-completion,
+body.light .completion-card,
+body.light .completion-section {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+}
+
+
+/* Completion title */
+html.light .profile-completion h1,
+html.light .profile-completion h2,
+html.light .profile-completion h3,
+html.light .completion-card h1,
+html.light .completion-card h2,
+html.light .completion-card h3,
+body.light .profile-completion h1,
+body.light .profile-completion h2,
+body.light .profile-completion h3,
+body.light .completion-card h1,
+body.light .completion-card h2,
+body.light .completion-card h3 {
+    color: #475569 !important;
+}
+
+
+/* =========================================================
+   PROFILE STATS
+========================================================= */
+
+html.light .profile-stats,
+html.light .profile-stat,
+body.light .profile-stats,
+body.light .profile-stat {
+    color: #0f172a !important;
+}
+
+html.light .profile-stat p,
+body.light .profile-stat p {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+html.light .about-section,
+html.light .about-card,
+body.light .about-section,
+body.light .about-card {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+}
+
+html.light .about-section span,
+html.light .about-card span,
+body.light .about-section span,
+body.light .about-card span {
+    color: #64748b !important;
+}
+
+
+/* =========================================================
+   SKILLS / TAGS IN PROFILE
+========================================================= */
+
+html.light .skill-tag,
+html.light .skill-chip,
+body.light .skill-tag,
+body.light .skill-chip {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #7c3aed !important;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+html.light .social-link,
+body.light .social-link {
+    background: #f0f9ff !important;
+    color: #0284c7 !important;
+    border-color: #e0f2fe !important;
+}
+
+
+/* =========================================================
+   REFRESH / SECONDARY TEXT
+========================================================= */
+
+html.light .refresh,
+html.light .refresh-btn,
+body.light .refresh,
+body.light .refresh-btn {
+    color: #475569 !important;
+}
+
+
+/* =========================================================
+   FORCE COMMON DARK TEXT TO LIGHT-THEME TEXT
+========================================================= */
+
+html.light .text-dark,
+body.light .text-dark {
+    color: #0f172a !important;
+}
+
+html.light .text-gray,
+body.light .text-gray {
+    color: #475569 !important;
+}

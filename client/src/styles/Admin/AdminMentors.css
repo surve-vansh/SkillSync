@@ -1,0 +1,679 @@
+/* =========================================================
+   ADMIN MENTORS PAGE
+========================================================= */
+
+.admin-mentors-page {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    color: #e2e8f0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-mentors-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mentor-title-icon {
+    width: 3.4rem;
+    height: 3.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.9rem;
+
+    background: rgba(124, 58, 237, 0.15);
+    color: #8b5cf6;
+
+    font-size: 2rem;
+}
+
+.admin-mentors-header h1 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.admin-mentors-header p {
+    margin: 0.35rem 0 0;
+
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.mentor-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.8rem;
+}
+
+.mentor-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.8rem 1.3rem;
+
+    border: 1px solid #2d2850;
+    border-radius: 999px;
+
+    background: transparent;
+    color: #94a3b8;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.mentor-tab:hover {
+    border-color: #8b5cf6;
+    color: #a78bfa;
+}
+
+.mentor-tab.active {
+    background: rgba(124, 58, 237, 0.16);
+    border-color: #8b5cf6;
+    color: #a78bfa;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.mentor-card {
+    padding: 1.5rem;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(30,41,59,0.55),
+            rgba(15,23,42,0.95)
+        );
+
+    border: 1px solid #2d2850;
+
+    border-radius: 1.25rem;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 0 1px rgba(124,58,237,0.08),
+        0 10px 30px rgba(0,0,0,0.35);
+}
+
+.mentor-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(139, 92, 246, 0.5);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.mentor-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.mentor-avatar {
+    width: 3.7rem;
+    height: 3.7rem;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #06b6d4
+    );
+
+    color: white;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+.mentor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.mentor-basic-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.mentor-basic-info h3 {
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size: 1.1rem;
+    font-weight: 750;
+}
+
+.mentor-basic-info p {
+    margin: 0.25rem 0 0;
+
+    color: #64748b;
+
+    font-size: 0.85rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   VERIFIED BADGE
+========================================================= */
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    padding: 0.4rem 0.7rem;
+
+    border-radius: 999px;
+
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+
+    color: #34d399;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.verified-badge svg {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.mentor-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+
+    margin-top: 1rem;
+
+    color: #fbbf24;
+
+    font-size: 0.9rem;
+}
+
+.mentor-rating svg {
+    font-size: 1rem;
+}
+
+.mentor-rating strong {
+    color: #fbbf24;
+}
+
+.mentor-rating span {
+    color: #fbbf24;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.mentor-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+
+    margin-top: 1rem;
+}
+
+.mentor-skills span {
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    background: rgba(6, 182, 212, 0.13);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+
+    color: #22d3ee;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BIO
+========================================================= */
+
+.mentor-bio{
+    padding: 1rem;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid #2d2850;
+
+    border-radius: 0.8rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mentor-meta-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mentor-meta-item {
+    padding: 0.7rem 0.9rem;
+    min-height: 70px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid #2d2850;
+
+    border-radius: 0.75rem;
+}
+
+.mentor-meta-item span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 0.75rem;
+
+    margin-bottom: 0.35rem;
+}
+
+.mentor-meta-item strong {
+    color: #f8fafc;
+
+    font-size: 0.95rem;
+}
+.mentor-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+
+    margin-bottom: 1rem;
+}
+
+.mentor-links a {
+    text-decoration: none;
+
+    padding: 0.55rem 0.9rem;
+
+    border-radius: 0.7rem;
+
+    background: rgba(124, 58, 237, 0.12);
+
+    border: 1px solid rgba(124, 58, 237, 0.25);
+
+    color: #a78bfa;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.mentor-links a:hover {
+    background: rgba(124, 58, 237, 0.2);
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.mentor-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    width: 100%;
+}
+
+.mentor-actions button {
+    flex: 1;
+
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+
+    border-radius: 0.75rem;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+/* Make icons behave normally */
+.mentor-actions button svg {
+    position: static !important;
+    display: block;
+
+    width: 1.1rem;
+    height: 1.1rem;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   APPROVE
+========================================================= */
+
+.approve-mentor-btn {
+    border: 1px solid #10b981;
+
+    background: linear-gradient(
+        135deg,
+        #10b981,
+        #06b6d4
+    );
+
+    color: white;
+}
+
+.approve-mentor-btn:hover {
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #a5d6c7,
+        #0891b2
+    );
+}
+
+
+/* =========================================================
+   REJECT
+========================================================= */
+
+.reject-mentor-btn {
+    border: 1px solid rgba(244, 63, 94, 0.45);
+
+    background: rgba(244, 63, 94, 0.08);
+
+    color: #fb7185;
+}
+
+.reject-mentor-btn:hover {
+    transform: translateY(-2px);
+
+    background: rgba(244, 63, 94, 0.16);
+
+    border-color: #f43f5e;
+}
+
+
+/* =========================================================
+   REVOKE
+========================================================= */
+
+.revoke-mentor-btn {
+    width: 100%;
+
+    border: none;
+
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #f43f5e
+    );
+
+    color: white;
+}
+
+.revoke-mentor-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .mentor-actions {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .mentor-actions button {
+        width: 100%;
+        flex: none;
+    }
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.mentor-empty {
+    padding: 4rem 1rem;
+
+    text-align: center;
+
+    background: #18172b;
+
+    border: 1px solid #2d2850;
+    border-radius: 1rem;
+}
+
+.mentor-empty svg {
+    color: #8b5cf6;
+    font-size: 2.5rem;
+}
+
+.mentor-empty h3 {
+    margin: 0.8rem 0 0.3rem;
+
+    color: #f8fafc;
+}
+
+.mentor-empty p {
+    margin: 0;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light .admin-mentors-page {
+    color: #0f172a;
+}
+
+body.light .admin-mentors-header h1 {
+    color: #0f172a;
+}
+
+body.light .admin-mentors-header p {
+    color: #64748b;
+}
+
+body.light .mentor-tab {
+    border-color: #e2e8f0;
+    color: #64748b;
+}
+
+body.light .mentor-tab:hover,
+body.light .mentor-tab.active {
+    color: #7c3aed;
+    border-color: #c4b5fd;
+    background: #f5f3ff;
+}
+
+body.light .mentor-card,
+body.light .mentor-empty {
+    background: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light .mentor-card:hover {
+    border-color: #c4b5fd;
+}
+
+body.light .mentor-basic-info h3 {
+    color: #0f172a;
+}
+
+body.light .mentor-basic-info p,
+body.light .mentor-bio {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .mentor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .admin-mentors-page {
+        padding: 1rem;
+    }
+
+    .admin-mentors-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .mentor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mentor-tabs {
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+    }
+
+    .mentor-tab {
+        flex-shrink: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .admin-mentors-page {
+        padding: 0.75rem;
+    }
+
+    .admin-mentors-header {
+        align-items: flex-start;
+    }
+
+    .mentor-title-icon {
+        width: 2.9rem;
+        height: 2.9rem;
+        font-size: 1.6rem;
+    }
+
+    .admin-mentors-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .admin-mentors-header p {
+        font-size: 0.85rem;
+    }
+
+    .mentor-card {
+        padding: 1.1rem;
+    }
+
+    .mentor-card-top {
+        flex-wrap: wrap;
+    }
+
+    .verified-badge {
+        margin-left: auto;
+    }
+
+    .mentor-actions {
+        flex-direction: column;
+    }
+}
