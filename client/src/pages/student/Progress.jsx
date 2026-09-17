@@ -41,10 +41,10 @@ const Progress = () => {
         setLoading(true);
         try {
             const [sessionsRes, testStatsRes, testAttemptsRes] = await Promise.all([
-                axios.get("http://localhost:3000/api/sessions/mine", { withCredentials: true }),
-                axios.get("http://localhost:3000/api/tests/stats", { withCredentials: true }),
+                axios.get("https://skill-sync-swart-phi.vercel.app/api/sessions/mine", { withCredentials: true }),
+                axios.get("https://skill-sync-swart-phi.vercel.app/api/tests/stats", { withCredentials: true }),
                 // We'll use sessions for recent activity
-                axios.get("http://localhost:3000/api/sessions/mine", { withCredentials: true }),
+                axios.get("https://skill-sync-swart-phi.vercel.app/api/sessions/mine", { withCredentials: true }),
             ]);
 
             const sessions  = sessionsRes.data.sessions  || [];

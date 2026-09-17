@@ -47,7 +47,7 @@ const AdminSkills = () => {
       setLoading(true);
 
       const response = await axios.get(
-        "http://localhost:3000/api/skills"
+        "https://skill-sync-swart-phi.vercel.app/api/skills"
       );
 
       if (response.data.success) {
@@ -157,7 +157,7 @@ const AdminSkills = () => {
 
 
       const response = await axios.post(
-        "http://localhost:3000/api/skills",
+        "https://skill-sync-swart-phi.vercel.app/api/skills",
         {
           name: formData.name.trim(),
           category: formData.category.trim(),
@@ -232,7 +232,7 @@ const AdminSkills = () => {
     try {
 
       await axios.delete(
-        `http://localhost:3000/api/skills/${id}`
+        `https://skill-sync-swart-phi.vercel.app/api/skills/${id}`
       );
 
       setSkills((prev) =>
@@ -257,7 +257,7 @@ const AdminSkills = () => {
       setSaving(true);
 
       const response = await axios.put(
-        `http://localhost:3000/api/skills/${editingSkill._id}`,
+        `https://skill-sync-swart-phi.vercel.app/api/skills/${editingSkill._id}`,
         formData
       );
 

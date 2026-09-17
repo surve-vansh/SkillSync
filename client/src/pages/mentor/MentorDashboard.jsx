@@ -54,8 +54,8 @@ const MentorDashboard = () => {
       setLoading(true);
       try {
         const [reqRes, sessRes] = await Promise.allSettled([
-          axios.get("http://localhost:3000/api/mentor/requests/list", { withCredentials: true }),
-          axios.get("http://localhost:3000/api/sessions/mentor", { withCredentials: true }),
+          axios.get("https://skill-sync-swart-phi.vercel.app/api/mentor/requests/list", { withCredentials: true }),
+          axios.get("https://skill-sync-swart-phi.vercel.app/api/sessions/mentor", { withCredentials: true }),
         ]);
 
         const allRequests = reqRes.status === "fulfilled" ? (reqRes.value.data.requests || []) : [];

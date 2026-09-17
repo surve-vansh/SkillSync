@@ -51,7 +51,7 @@ const StudentSidebar = ({ isOpen, onClose }) => {
         const role = user.role === "admin"
             ? "admin"
             : (localStorage.getItem("activeRole") === "mentor" && user.isMentor ? "mentor" : "student");
-        axios.get(`http://localhost:3000/api/notifications/unread-count?role=${role}`, { withCredentials: true })
+        axios.get(`https://skill-sync-swart-phi.vercel.app/api/notifications/unread-count?role=${role}`, { withCredentials: true })
             .then((res) => setUnreadCount(res.data.count || 0))
             .catch(() => {});
     }, [user]);
@@ -65,7 +65,7 @@ const StudentSidebar = ({ isOpen, onClose }) => {
 
     const confirmLogout = async () => {
         try {
-            await fetch("http://localhost:3000/api/auth/logout", {
+            await fetch("https://skill-sync-swart-phi.vercel.app/api/auth/logout", {
                 method: "POST",
                 credentials: "include",
             });
@@ -78,7 +78,7 @@ const StudentSidebar = ({ isOpen, onClose }) => {
     };
 
     const avatarUrl = user?.profilePicture
-        ? `http://localhost:3000${user.profilePicture}`
+        ? `https://skill-sync-swart-phi.vercel.app${user.profilePicture}`
         : null;
     if (loading) {
         return null;
@@ -253,3 +253,4 @@ const StudentSidebar = ({ isOpen, onClose }) => {
 };
 
 export default StudentSidebar;
+

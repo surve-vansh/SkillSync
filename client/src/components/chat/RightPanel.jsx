@@ -64,3 +64,4 @@ const RightPanel = ({ conversation, currentUserId }) => {
 };
 
 export default RightPanel;
+

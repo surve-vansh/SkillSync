@@ -20,7 +20,7 @@ import {
   RiLoader4Line,
 } from "react-icons/ri";
 
-const API = "http://localhost:3000";
+const API = "https://skill-sync-swart-phi.vercel.app";
 
 const MentorProfile = () => {
   const navigate = useNavigate();
@@ -336,3 +336,4 @@ const MentorProfile = () => {
 };
 
 export default MentorProfile;
+

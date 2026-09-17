@@ -89,7 +89,7 @@ const AdminSidebar = ({ isOpen, onClose }) => {
 
     const confirmLogout = async () => {
         try {
-            await fetch("http://localhost:3000/api/auth/logout", {
+            await fetch("https://skill-sync-swart-phi.vercel.app/api/auth/logout", {
                 method: "POST",
                 credentials: "include",
             });

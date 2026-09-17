@@ -72,3 +72,4 @@ const LogoutModal = ({ isOpen, onCancel, onConfirm, userName }) => {
 
 export default LogoutModal;
 
+

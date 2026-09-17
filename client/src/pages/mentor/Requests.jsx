@@ -28,7 +28,7 @@ const MentorRequests = () => {
         setLoading(true);
         setError("");
         try {
-            const res = await axios.get("http://localhost:3000/api/mentor/requests/list", {
+            const res = await axios.get("https://skill-sync-swart-phi.vercel.app/api/mentor/requests/list", {
                 withCredentials: true,
             });
             setRequests(res.data.requests || []);
@@ -46,7 +46,7 @@ const MentorRequests = () => {
         setActing(id);
         try {
             await axios.put(
-                `http://localhost:3000/api/mentor/requests/${id}/${action}`,
+                `https://skill-sync-swart-phi.vercel.app/api/mentor/requests/${id}/${action}`,
                 {},
                 { withCredentials: true }
             );
@@ -88,7 +88,7 @@ const MentorRequests = () => {
     /* ── Avatar helper ── */
     const avatarSrc = (pic) => {
         if (!pic) return null;
-        return pic.startsWith("http") ? pic : `http://localhost:3000${pic}`;
+        return pic.startsWith("http") ? pic : `https://skill-sync-swart-phi.vercel.app${pic}`;
     };
 
     return (
@@ -266,3 +266,4 @@ const MentorRequests = () => {
 };
 
 export default MentorRequests;
+

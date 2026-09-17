@@ -813,3 +813,4 @@ const MagicBento = ({
 };
 
 export default MagicBento;
+

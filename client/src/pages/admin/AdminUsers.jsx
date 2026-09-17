@@ -79,7 +79,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
         try {
             const response = await axios.get(
-                "http://localhost:3000/api/admin/users"
+                "https://skill-sync-swart-phi.vercel.app/api/admin/users"
             );
 
             if (response.data.success) {
@@ -103,7 +103,7 @@ const AdminUsers = () => {
 
         try {
             await axios.delete(
-                `http://localhost:3000/api/admin/users/${id}`
+                `https://skill-sync-swart-phi.vercel.app/api/admin/users/${id}`
             );
 
             fetchUsers();

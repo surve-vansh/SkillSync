@@ -103,7 +103,7 @@ const CreateAccountForm = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://skill-sync-swart-phi.vercel.app/api/auth/register",
         { name, email, password, role, qualification, experience, skills, bio },
         { withCredentials: true }
       );

@@ -23,7 +23,7 @@ export default function MyStudents() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get("http://localhost:3000/api/mentor/students", {
+      const res = await axios.get("https://skill-sync-swart-phi.vercel.app/api/mentor/students", {
         withCredentials: true,
       });
       setStudents(res.data.students  || []);
@@ -50,7 +50,7 @@ export default function MyStudents() {
   /* ── Avatar helper ── */
   const avatarSrc = (pic) => {
     if (!pic) return null;
-    return pic.startsWith("http") ? pic : `http://localhost:3000${pic}`;
+    return pic.startsWith("http") ? pic : `https://skill-sync-swart-phi.vercel.app${pic}`;
   };
 
   /* ── Date formatter ── */
