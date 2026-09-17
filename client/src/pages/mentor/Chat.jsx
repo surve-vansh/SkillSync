@@ -5,7 +5,7 @@ import { useSocket } from '../../context/SocketContext';
 import ConversationsPanel from '../../components/chat/ConversationsPanel';
 import ChatWindow from '../../components/chat/ChatWindow';
 import RightPanel from '../../components/chat/RightPanel';
-import '../../styles/Student/Chat.css';
+// import '../../styles/Student/Chat.css';
 
 const MentorChat = () => {
   const { user } = useAuth();

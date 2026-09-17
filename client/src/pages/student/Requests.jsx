@@ -12,7 +12,7 @@ import {
     RiRefreshLine,
 } from "react-icons/ri";
 
-import "../../styles/student/Requests.css";
+import "../../styles/Student/Requests.css";
 
 /* ── Status badge styles ── */
 const statusClass = (status) => {

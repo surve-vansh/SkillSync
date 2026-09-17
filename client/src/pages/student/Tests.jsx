@@ -13,7 +13,7 @@ import {
     RiRestartLine,
 } from "react-icons/ri";
 
-import "../../styles/student/Tests.css";
+import "../../styles/Student/Tests.css";
 
 const skillMeta = {
     'JavaScript': { icon: '🟨', color: 'yellow' },
