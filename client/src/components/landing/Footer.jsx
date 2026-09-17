@@ -7,7 +7,7 @@ import {
   FaDiscord,
   FaGithub,
 } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Logo.png";
 // import GradientWaves from "./GradientWaves";
 
 const Footer = () => {
