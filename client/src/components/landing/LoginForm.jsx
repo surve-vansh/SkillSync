@@ -8,18 +8,18 @@ import { Link } from "react-router-dom";
 import Popup from "../common/Popup";
 
 const LoginForm = () => {
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
   const { setUser } = useAuth();
 
-  const [email,        setEmail]        = useState("");
-  const [password,     setPassword]     = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading,      setLoading]      = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Info / error popup
-  const [popupOpen,    setPopupOpen]    = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
-  const [popupType,    setPopupType]    = useState("error");
+  const [popupType, setPopupType] = useState("error");
 
   // After success popup is confirmed, what to do
   const [pendingAction, setPendingAction] = useState(null); // "dashboard" | "mentor" | "choose" | "admin"
@@ -28,15 +28,15 @@ const LoginForm = () => {
   const [showRoleModal, setShowRoleModal] = useState(false);
 
   // ── Forgot Password modal state ──────────────────────────────
-  const [showForgot,        setShowForgot]        = useState(false);
-  const [forgotEmail,       setForgotEmail]       = useState("");
-  const [forgotNewPwd,      setForgotNewPwd]      = useState("");
-  const [forgotConfirmPwd,  setForgotConfirmPwd]  = useState("");
-  const [showForgotNew,     setShowForgotNew]     = useState(false);
+  const [showForgot, setShowForgot] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [forgotNewPwd, setForgotNewPwd] = useState("");
+  const [forgotConfirmPwd, setForgotConfirmPwd] = useState("");
+  const [showForgotNew, setShowForgotNew] = useState(false);
   const [showForgotConfirm, setShowForgotConfirm] = useState(false);
-  const [forgotLoading,     setForgotLoading]     = useState(false);
-  const [forgotError,       setForgotError]       = useState("");
-  const [forgotSuccess,     setForgotSuccess]     = useState(false);
+  const [forgotLoading, setForgotLoading] = useState(false);
+  const [forgotError, setForgotError] = useState("");
+  const [forgotSuccess, setForgotSuccess] = useState(false);
   const forgotFirstRef = useRef(null);
 
   /* Close forgot modal & reset all state */
@@ -151,10 +151,10 @@ const LoginForm = () => {
   /* ── Called when user clicks OK on the success popup ── */
   const handlePopupConfirm = () => {
     setPopupOpen(false);
-    if (pendingAction === "admin")     { navigate("/admin");     return; }
+    if (pendingAction === "admin") { navigate("/admin"); return; }
     if (pendingAction === "dashboard") { localStorage.removeItem("activeRole"); navigate("/dashboard"); return; }
-    if (pendingAction === "mentor")    { localStorage.setItem("activeRole", "mentor"); navigate("/mentor"); return; }
-    if (pendingAction === "choose")    { setShowRoleModal(true); return; }
+    if (pendingAction === "mentor") { localStorage.setItem("activeRole", "mentor"); navigate("/mentor"); return; }
+    if (pendingAction === "choose") { setShowRoleModal(true); return; }
   };
 
   return (
@@ -364,7 +364,7 @@ const LoginForm = () => {
                 width: 32, height: 32, borderRadius: "50%",
               }}
               onMouseOver={e => e.currentTarget.style.color = "#e2e8f0"}
-              onMouseOut={e  => e.currentTarget.style.color = "#94a3b8"}
+              onMouseOut={e => e.currentTarget.style.color = "#94a3b8"}
               aria-label="Close"
             >
               <FiX />
@@ -429,7 +429,7 @@ const LoginForm = () => {
                         outline: "none", boxSizing: "border-box",
                       }}
                       onFocus={e => e.target.style.borderColor = "#6366f1"}
-                      onBlur={e  => e.target.style.borderColor = "#334155"}
+                      onBlur={e => e.target.style.borderColor = "#334155"}
                     />
                   </div>
                 </div>
@@ -454,7 +454,7 @@ const LoginForm = () => {
                         outline: "none", boxSizing: "border-box",
                       }}
                       onFocus={e => e.target.style.borderColor = "#6366f1"}
-                      onBlur={e  => e.target.style.borderColor = "#334155"}
+                      onBlur={e => e.target.style.borderColor = "#334155"}
                     />
                     <button
                       type="button"
@@ -490,7 +490,7 @@ const LoginForm = () => {
                         outline: "none", boxSizing: "border-box",
                       }}
                       onFocus={e => e.target.style.borderColor = "#6366f1"}
-                      onBlur={e  => e.target.style.borderColor = "#334155"}
+                      onBlur={e => e.target.style.borderColor = "#334155"}
                     />
                     <button
                       type="button"
@@ -544,3 +544,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+

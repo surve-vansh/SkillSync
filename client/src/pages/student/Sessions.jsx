@@ -13,8 +13,8 @@ import {
 const TABS = ["All", "Upcoming", "Ongoing", "Completed", "Cancelled"];
 
 const statusLabel = {
-  upcoming:  "Upcoming",
-  ongoing:   "Live Now",
+  upcoming: "Upcoming",
+  ongoing: "Live Now",
   completed: "Completed",
   cancelled: "Cancelled",
 };
@@ -29,10 +29,10 @@ const fmtDate = (iso) => {
 
 const StudentSessions = () => {
   const { user } = useAuth();
-  const [sessions, setSessions]   = useState([]);
-  const [loading, setLoading]     = useState(true);
+  const [sessions, setSessions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("All");
-  const [search, setSearch]       = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => { fetchSessions(); }, []);
 
@@ -59,10 +59,10 @@ const StudentSessions = () => {
   });
 
   /* ── Stats ── */
-  const total     = sessions.length;
-  const upcoming  = sessions.filter(s => s.status === "upcoming").length;
+  const total = sessions.length;
+  const upcoming = sessions.filter(s => s.status === "upcoming").length;
   const completed = sessions.filter(s => s.status === "completed").length;
-  const hours     = sessions.filter(s => s.status === "completed")
+  const hours = sessions.filter(s => s.status === "completed")
     .reduce((sum, s) => sum + (parseInt(s.duration) || 60) / 60, 0)
     .toFixed(1);
 
@@ -149,7 +149,7 @@ const StudentSessions = () => {
               <p>
                 {search ? "Try adjusting your search." :
                   activeTab === "Upcoming" ? "You have no upcoming sessions. Find a mentor to book one!" :
-                  "No sessions in this category yet."}
+                    "No sessions in this category yet."}
               </p>
               {activeTab === "Upcoming" && (
                 <Link to="/find-mentors" style={{
@@ -248,4 +248,5 @@ const StudentSessions = () => {
 };
 
 export default StudentSessions;
+
 

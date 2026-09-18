@@ -16,8 +16,8 @@ import "../../styles/Student/Requests.css";
 
 /* ── Status badge styles ── */
 const statusClass = (status) => {
-    if (status === "accepted")  return "request-status accepted";
-    if (status === "rejected")  return "request-status rejected";
+    if (status === "accepted") return "request-status accepted";
+    if (status === "rejected") return "request-status rejected";
     if (status === "completed") return "request-status completed";
     return "request-status pending";
 };
@@ -31,8 +31,8 @@ const Requests = () => {
     const navigate = useNavigate();
 
     const [requests, setRequests] = useState([]);
-    const [loading,  setLoading]  = useState(true);
-    const [error,    setError]    = useState("");
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
     /* ── Fetch student's own requests ── */
     const fetchRequests = async () => {
@@ -53,9 +53,9 @@ const Requests = () => {
     useEffect(() => { fetchRequests(); }, []);
 
     /* ── Stats computed from real data ── */
-    const pendingCount   = requests.filter((r) => r.status === "pending").length;
-    const acceptedCount  = requests.filter((r) => r.status === "accepted").length;
-    const rejectedCount  = requests.filter((r) => r.status === "rejected").length;
+    const pendingCount = requests.filter((r) => r.status === "pending").length;
+    const acceptedCount = requests.filter((r) => r.status === "accepted").length;
+    const rejectedCount = requests.filter((r) => r.status === "rejected").length;
 
     /* ── Avatar helper ── */
     const avatarSrc = (pic) => {
@@ -139,7 +139,7 @@ const Requests = () => {
                     <div className="requests-list">
                         {requests.map((request) => {
                             const mentor = request.mentor;
-                            const src    = mentor?.profilePicture ? avatarSrc(mentor.profilePicture) : null;
+                            const src = mentor?.profilePicture ? avatarSrc(mentor.profilePicture) : null;
                             const initial = mentor?.name?.charAt(0)?.toUpperCase() || "M";
                             const date = new Date(request.createdAt).toLocaleDateString("en-IN", {
                                 day: "numeric", month: "short", year: "numeric",
@@ -190,3 +190,4 @@ const Requests = () => {
 };
 
 export default Requests;
+

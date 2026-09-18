@@ -20,16 +20,16 @@ import {
 } from "react-icons/ri";
 
 const experienceLevels = [
-  { value: "beginner",     label: "Beginner",     icon: "🌱", sub: "<1 yr"  },
+  { value: "beginner", label: "Beginner", icon: "🌱", sub: "<1 yr" },
   { value: "intermediate", label: "Intermediate", icon: "📘", sub: "1–3 yrs" },
-  { value: "advanced",     label: "Advanced",     icon: "🚀", sub: "4–6 yrs" },
-  { value: "expert",       label: "Expert",       icon: "💎", sub: "7+ yrs"  },
+  { value: "advanced", label: "Advanced", icon: "🚀", sub: "4–6 yrs" },
+  { value: "expert", label: "Expert", icon: "💎", sub: "7+ yrs" },
 ];
 
 const API = "https://skill-sync-swart-phi.vercel.app";
 
 const MentorEditProfile = () => {
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
   const { user, setUser } = useAuth();
   const fileInputRef = useRef(null);
 
@@ -42,15 +42,15 @@ const MentorEditProfile = () => {
 
   /* ── Local form state (pre-filled from user object) ── */
   const [form, setForm] = useState({
-    fullName:     user?.name             || "",
-    bio:          user?.bio              || "",
-    location:     user?.location         || "",
-    availability: user?.availability     || "weekends",
-    experience:   user?.experienceLevel  || "beginner",
-    linkedin:     user?.socialLinks?.linkedin   || "",
-    github:       user?.socialLinks?.github     || "",
-    portfolio:    user?.socialLinks?.portfolio  || "",
-    twitter:      user?.socialLinks?.twitter    || "",
+    fullName: user?.name || "",
+    bio: user?.bio || "",
+    location: user?.location || "",
+    availability: user?.availability || "weekends",
+    experience: user?.experienceLevel || "beginner",
+    linkedin: user?.socialLinks?.linkedin || "",
+    github: user?.socialLinks?.github || "",
+    portfolio: user?.socialLinks?.portfolio || "",
+    twitter: user?.socialLinks?.twitter || "",
   });
 
   const [skillsTeach, setSkillsTeach] = useState(user?.skills_offered || []);
@@ -59,13 +59,13 @@ const MentorEditProfile = () => {
   const [skillLearnInput, setSkillLearnInput] = useState("");
 
   /* ── Photo state ── */
-  const [photoFile, setPhotoFile]     = useState(null);
+  const [photoFile, setPhotoFile] = useState(null);
   const [photoPreview, setPhotoPreview] = useState(getAvatarSrc(user?.profilePicture));
 
   /* ── UI state ── */
-  const [saving,  setSaving]  = useState(false);
+  const [saving, setSaving] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error,   setError]   = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -108,27 +108,27 @@ const MentorEditProfile = () => {
 
     try {
       const fd = new FormData();
-      fd.append("name",            form.fullName);
-      fd.append("bio",             form.bio);
-      fd.append("location",        form.location);
-      fd.append("availability",    form.availability);
+      fd.append("name", form.fullName);
+      fd.append("bio", form.bio);
+      fd.append("location", form.location);
+      fd.append("availability", form.availability);
       fd.append("experienceLevel", form.experience);
-      fd.append("skills_offered",  JSON.stringify(skillsTeach));
-      fd.append("skills_wanted",   JSON.stringify(skillsLearn));
+      fd.append("skills_offered", JSON.stringify(skillsTeach));
+      fd.append("skills_wanted", JSON.stringify(skillsLearn));
       fd.append("socialLinks", JSON.stringify({
-        linkedin:  form.linkedin,
-        github:    form.github,
+        linkedin: form.linkedin,
+        github: form.github,
         portfolio: form.portfolio,
-        twitter:   form.twitter,
+        twitter: form.twitter,
       }));
       if (photoFile) {
         fd.append("profilePicture", photoFile);
       }
 
       const res = await fetch(`${API}/api/auth/profile`, {
-        method:      "PUT",
+        method: "PUT",
         credentials: "include",
-        body:        fd,
+        body: fd,
       });
 
       const data = await res.json();
@@ -154,15 +154,15 @@ const MentorEditProfile = () => {
   const completionPct = user?.completionPercentage || 0;
 
   const completionItems = [
-    { label: "Full Name (+10%)",       done: !!form.fullName },
-    { label: "Bio (+15%)",             done: !!form.bio },
-    { label: "Location (+10%)",        done: !!form.location },
-    { label: "Profile Photo (+15%)",   done: !!photoPreview },
-    { label: "Skills I Teach (+10%)",  done: skillsTeach.length > 0 },
+    { label: "Full Name (+10%)", done: !!form.fullName },
+    { label: "Bio (+15%)", done: !!form.bio },
+    { label: "Location (+10%)", done: !!form.location },
+    { label: "Profile Photo (+15%)", done: !!photoPreview },
+    { label: "Skills I Teach (+10%)", done: skillsTeach.length > 0 },
     { label: "Skills to Learn (+10%)", done: skillsLearn.length > 0 },
-    { label: "Experience Level (+12%)",done: !!form.experience },
-    { label: "Social Link (+10%)",     done: !!(form.linkedin || form.github || form.portfolio || form.twitter) },
-    { label: "Availability (+8%)",     done: !!form.availability },
+    { label: "Experience Level (+12%)", done: !!form.experience },
+    { label: "Social Link (+10%)", done: !!(form.linkedin || form.github || form.portfolio || form.twitter) },
+    { label: "Availability (+8%)", done: !!form.availability },
   ];
 
   return (
@@ -438,4 +438,5 @@ const MentorEditProfile = () => {
 };
 
 export default MentorEditProfile;
+
 

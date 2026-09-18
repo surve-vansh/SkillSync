@@ -73,20 +73,20 @@ const FindMentors = () => {
     const { user } = useAuth();
     const [searchParams] = useSearchParams();
 
-    const [mentors,    setMentors]    = useState([]);
+    const [mentors, setMentors] = useState([]);
     const [fetchLoading, setFetchLoading] = useState(true);
-    const [fetchError,   setFetchError]   = useState("");
+    const [fetchError, setFetchError] = useState("");
 
-    const [search,       setSearch]       = useState(searchParams.get("search") || "");
-    const [skillFilter,  setSkillFilter]  = useState(searchParams.get("skill")  || "");
-    const [experience,   setExperience]   = useState("all");
-    const [rating,       setRating]       = useState("all");
+    const [search, setSearch] = useState(searchParams.get("search") || "");
+    const [skillFilter, setSkillFilter] = useState(searchParams.get("skill") || "");
+    const [experience, setExperience] = useState("all");
+    const [rating, setRating] = useState("all");
     const [availability, setAvailability] = useState("all");
 
     const [selectedMentor, setSelectedMentor] = useState(null);
-    const [message,        setMessage]         = useState("");
-    const [sending,        setSending]          = useState(false);
-    const [modal,          setModal]            = useState(null);
+    const [message, setMessage] = useState("");
+    const [sending, setSending] = useState(false);
+    const [modal, setModal] = useState(null);
 
     /* ── Fetch approved mentors ── */
     useEffect(() => {
@@ -398,3 +398,4 @@ const FindMentors = () => {
 };
 
 export default FindMentors;
+

@@ -15,7 +15,7 @@ export default function CreateTests() {
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [showModal, setShowModal] = useState(false);
-    
+
     // Form state
     const [formData, setFormData] = useState({
         title: "",
@@ -32,7 +32,7 @@ export default function CreateTests() {
         try {
             const res = await axios.get("https://skill-sync-swart-phi.vercel.app/api/tests/mine", { withCredentials: true });
             setTests(res.data.tests || []);
-        } catch(err) {
+        } catch (err) {
             console.error("Failed to fetch tests", err);
             setTests([]);
         } finally {
@@ -79,7 +79,7 @@ export default function CreateTests() {
                 questions: [{ question: "", options: ["", "", "", ""], correctIndex: 0 }]
             });
             fetchTests();
-        } catch(err) {
+        } catch (err) {
             alert(err.response?.data?.message || "Failed to create test");
         }
     };
@@ -201,30 +201,30 @@ export default function CreateTests() {
                         </div>
 
                         <form onSubmit={handleSubmit} style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "20px" }}>
-                            
+
                             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                     <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Title *</label>
-                                    <input required value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})}
+                                    <input required value={formData.title} onChange={e => setFormData({ ...formData, title: e.target.value })}
                                         style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff" }} />
                                 </div>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                     <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Skill *</label>
-                                    <input required value={formData.skill} onChange={e => setFormData({...formData, skill: e.target.value})}
+                                    <input required value={formData.skill} onChange={e => setFormData({ ...formData, skill: e.target.value })}
                                         style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff" }} placeholder="e.g. React.js" />
                                 </div>
                             </div>
 
                             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                 <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Description</label>
-                                <textarea value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})}
+                                <textarea value={formData.description} onChange={e => setFormData({ ...formData, description: e.target.value })}
                                     style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff", minHeight: "80px", resize: "vertical" }} />
                             </div>
 
                             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "16px" }}>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                     <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Difficulty</label>
-                                    <select value={formData.difficulty} onChange={e => setFormData({...formData, difficulty: e.target.value})}
+                                    <select value={formData.difficulty} onChange={e => setFormData({ ...formData, difficulty: e.target.value })}
                                         style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff" }}>
                                         <option value="Beginner">Beginner</option>
                                         <option value="Intermediate">Intermediate</option>
@@ -233,12 +233,12 @@ export default function CreateTests() {
                                 </div>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                     <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Duration (mins)</label>
-                                    <input type="number" min="1" required value={formData.duration} onChange={e => setFormData({...formData, duration: Number(e.target.value)})}
+                                    <input type="number" min="1" required value={formData.duration} onChange={e => setFormData({ ...formData, duration: Number(e.target.value) })}
                                         style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff" }} />
                                 </div>
                                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                                     <label style={{ color: "#cbd5e1", fontSize: "0.9rem" }}>Coin Reward</label>
-                                    <input type="number" min="0" required value={formData.coinReward} onChange={e => setFormData({...formData, coinReward: Number(e.target.value)})}
+                                    <input type="number" min="0" required value={formData.coinReward} onChange={e => setFormData({ ...formData, coinReward: Number(e.target.value) })}
                                         style={{ padding: "10px", borderRadius: "8px", background: "#13131a", border: "1px solid #323248", color: "#fff" }} />
                                 </div>
                             </div>
@@ -307,3 +307,4 @@ export default function CreateTests() {
         </div>
     );
 }
+

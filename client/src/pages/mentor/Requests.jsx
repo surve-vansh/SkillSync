@@ -16,12 +16,12 @@ import {
 const TABS = ["All", "Pending", "Accepted", "Rejected"];
 
 const MentorRequests = () => {
-    const [requests,  setRequests]  = useState([]);
-    const [loading,   setLoading]   = useState(true);
-    const [error,     setError]     = useState("");
-    const [search,    setSearch]    = useState("");
+    const [requests, setRequests] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [search, setSearch] = useState("");
     const [activeTab, setActiveTab] = useState("All");
-    const [acting,    setActing]    = useState(null); // id of request being accepted/rejected
+    const [acting, setActing] = useState(null); // id of request being accepted/rejected
 
     /* ── Fetch incoming requests ── */
     const fetchRequests = async () => {
@@ -63,14 +63,14 @@ const MentorRequests = () => {
 
     /* ── Filter ── */
     const counts = {
-        All:      requests.length,
-        Pending:  requests.filter((r) => r.status === "pending").length,
+        All: requests.length,
+        Pending: requests.filter((r) => r.status === "pending").length,
         Accepted: requests.filter((r) => r.status === "accepted").length,
         Rejected: requests.filter((r) => r.status === "rejected").length,
     };
 
     const filtered = requests.filter((r) => {
-        const matchTab    = activeTab === "All" || r.status === activeTab.toLowerCase();
+        const matchTab = activeTab === "All" || r.status === activeTab.toLowerCase();
         const studentName = r.student?.name || "";
         const matchSearch =
             studentName.toLowerCase().includes(search.toLowerCase()) ||
@@ -195,7 +195,7 @@ const MentorRequests = () => {
                     ) : (
                         filtered.map((req) => {
                             const student = req.student;
-                            const src     = student?.profilePicture ? avatarSrc(student.profilePicture) : null;
+                            const src = student?.profilePicture ? avatarSrc(student.profilePicture) : null;
                             const initials = (student?.name || "?").split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
                             const date = new Date(req.createdAt).toLocaleDateString("en-IN", {
                                 day: "numeric", month: "short", year: "numeric",
@@ -266,4 +266,5 @@ const MentorRequests = () => {
 };
 
 export default MentorRequests;
+
 

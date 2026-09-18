@@ -147,115 +147,117 @@ const MentorSidebar = ({ isOpen, onClose }) => {
 
       <aside className={`mentor-sidebar ${isOpen ? "open" : ""}`}>
 
-      {/* Logo */}
-      <div className="sidebar-header"
-        style={{
-          padding: '1.25rem 1.25rem 0.75rem'
-        }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'self-start', gap: '0.5rem' }}>
-            <div style={{
-              paddingLeft: 30,
-              width: 100, height: 36,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '1rem',
-            }}><Link to="/" className="flex items-center shrink-0">
-                <img
-                  // src={LogoDark}
-                  src={isDark ? LogoLight : LogoDark}
-                  alt="SkillSync"
-                  className="block w-auto h-24 sm:h-36"
-                />
-              </Link></div>
+        {/* Logo */}
+        <div className="sidebar-header"
+          style={{
+            padding: '1.25rem 1.25rem 0.75rem'
+          }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', alignItems: 'self-start', gap: '0.5rem' }}>
+              <div style={{
+                paddingLeft: 30,
+                width: 100, height: 36,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '1rem',
+              }}><Link to="/" className="flex items-center shrink-0">
+                  <img
+                    // src={LogoDark}
+                    src={isDark ? LogoLight : LogoDark}
+                    alt="SkillSync"
+                    className="block w-auto h-24 sm:h-36"
+                  />
+                </Link></div>
 
 
+            </div>
+            <button onClick={onClose} className="btn-ghost sidebar-close-btn" style={{ padding: '0.25rem' }} id="sidebar-close">
+              <RiCloseLine size={20} />
+            </button>
           </div>
-          <button onClick={onClose} className="btn-ghost sidebar-close-btn" style={{ padding: '0.25rem' }} id="sidebar-close">
-            <RiCloseLine size={20} />
-          </button>
+
+          {/* User info */}
+          <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            {avatarUrl ? (
+              <img src={avatarUrl} alt={user?.name} className="avatar" style={{ width: 40, height: 40 }} />
+            ) : (
+              <div className="avatar" style={{ width: 40, height: 40, fontSize: '1rem' }}>
+                {user?.name?.charAt(0).toUpperCase()}
+              </div>
+            )}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <p style={{ margin: 0, fontWeight: 600, fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {user?.name}
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                <span className="badge badge-primary" style={{ fontSize: '0.7rem', padding: '0.1rem 0.5rem' }}>
+                  {user?.isMentor ? 'mentor' : (user?.role || 'user')}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* User info */}
-        <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          {avatarUrl ? (
-            <img src={avatarUrl} alt={user?.name} className="avatar" style={{ width: 40, height: 40 }} />
-          ) : (
-            <div className="avatar" style={{ width: 40, height: 40, fontSize: '1rem' }}>
-              {user?.name?.charAt(0).toUpperCase()}
-            </div>
-          )}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <p style={{ margin: 0, fontWeight: 600, fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {user?.name}
-            </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-              <span className="badge badge-primary" style={{ fontSize: '0.7rem', padding: '0.1rem 0.5rem' }}>
-                {user?.isMentor ? 'mentor' : (user?.role || 'user')}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+        {/* LINKS */}
 
-      {/* LINKS */}
+        <nav className="mentor-nav">
 
-      <nav className="mentor-nav">
+          {mentorLinks.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/mentor"}
+              className={({ isActive }) =>
+                isActive
+                  ? "mentor-link active"
+                  : "mentor-link"
+              }
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
 
-        {mentorLinks.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            end={item.to === "/mentor"}
-            className={({ isActive }) =>
-              isActive
-                ? "mentor-link active"
-                : "mentor-link"
-            }
+        </nav>
+
+        {/* FOOTER */}
+
+        <div className="mentor-sidebar-footer">
+
+          {/* Switch to Student — only for dual-role users (isMentor=true means they also have student access) */}
+          <button
+            onClick={() => setShowSwitch(true)}
+            className="mentor-link footer-btn"
+            style={{ color: '#a78bfa' }}
           >
-            {item.icon}
-            <span>{item.label}</span>
-          </NavLink>
-        ))}
+            <RiExchangeLine />
+            <span>Switch to Student</span>
+          </button>
 
-      </nav>
+          <button
+            onClick={toggleTheme}
+            className="mentor-link footer-btn"
+          >
+            {isDark ? <RiSunLine /> : <RiMoonLine />}
+            <span>
+              {isDark ? "Light Mode" : "Dark Mode"}
+            </span>
+          </button>
 
-      {/* FOOTER */}
+          <button
+            onClick={() => setShowLogout(true)}
+            className="mentor-link footer-btn logout"
+          >
+            <RiLogoutBoxLine />
+            <span>Logout</span>
+          </button>
 
-      <div className="mentor-sidebar-footer">
+        </div>
 
-        {/* Switch to Student — only for dual-role users (isMentor=true means they also have student access) */}
-        <button
-          onClick={() => setShowSwitch(true)}
-          className="mentor-link footer-btn"
-          style={{ color: '#a78bfa' }}
-        >
-          <RiExchangeLine />
-          <span>Switch to Student</span>
-        </button>
-
-        <button
-          onClick={toggleTheme}
-          className="mentor-link footer-btn"
-        >
-          {isDark ? <RiSunLine /> : <RiMoonLine />}
-          <span>
-            {isDark ? "Light Mode" : "Dark Mode"}
-          </span>
-        </button>
-
-        <button
-          onClick={() => setShowLogout(true)}
-          className="mentor-link footer-btn logout"
-        >
-          <RiLogoutBoxLine />
-          <span>Logout</span>
-        </button>
-
-      </div>
-
-    </aside>
+      </aside>
     </>
   );
 };
 
-export default MentorSidebar;
+export default MentorSidebar;
+
+

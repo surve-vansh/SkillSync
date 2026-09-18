@@ -27,21 +27,21 @@ const MentorProfile = () => {
   const { user, refreshUser, loading } = useAuth();
 
   /* ── Derived values from real user ── */
-  const displayName   = user?.name          || "Mentor";
-  const bio           = user?.bio           || "Add a bio to let students know about you.";
-  const location      = user?.location      || "";
-  const experience    = user?.experienceLevel || "beginner";
-  const availability  = user?.availability  || "flexible";
-  const skillsTeach   = user?.skills_offered || [];
-  const skillsLearn   = user?.skills_wanted  || [];
-  const completion    = user?.completionPercentage || 0;
-  const rating        = user?.rating        || 0;
-  const totalRatings  = user?.totalRatings  || 0;
-  const memberSince   = user?.createdAt
+  const displayName = user?.name || "Mentor";
+  const bio = user?.bio || "Add a bio to let students know about you.";
+  const location = user?.location || "";
+  const experience = user?.experienceLevel || "beginner";
+  const availability = user?.availability || "flexible";
+  const skillsTeach = user?.skills_offered || [];
+  const skillsLearn = user?.skills_wanted || [];
+  const completion = user?.completionPercentage || 0;
+  const rating = user?.rating || 0;
+  const totalRatings = user?.totalRatings || 0;
+  const memberSince = user?.createdAt
     ? new Date(user.createdAt).toLocaleDateString("en-US", { month: "short", year: "numeric" })
     : "—";
 
-  const socialLinks   = user?.socialLinks   || {};
+  const socialLinks = user?.socialLinks || {};
 
   /* ── Avatar — could be a server path or empty ── */
   const getAvatarSrc = (pic) => {
@@ -53,17 +53,17 @@ const MentorProfile = () => {
 
   /* ── Experience label ── */
   const expLabels = {
-    beginner:     "Beginner",
+    beginner: "Beginner",
     intermediate: "Intermediate",
-    advanced:     "Advanced",
-    expert:       "Expert",
+    advanced: "Advanced",
+    expert: "Expert",
   };
 
   /* ── Availability label ── */
   const availLabels = {
     weekdays: "Weekdays",
     weekends: "Weekends",
-    both:     "Weekdays & Weekends",
+    both: "Weekdays & Weekends",
     flexible: "Flexible",
   };
 
@@ -74,10 +74,10 @@ const MentorProfile = () => {
 
   /* ── Social links list — only show filled ones ── */
   const socialItems = [
-    { icon: <RiLinkedinBoxLine />, label: "LinkedIn",        url: socialLinks.linkedin  },
-    { icon: <RiGithubLine />,      label: "GitHub",          url: socialLinks.github    },
-    { icon: <RiGlobalLine />,      label: "Portfolio",       url: socialLinks.portfolio },
-    { icon: <RiTwitterLine />,     label: "Twitter / X",     url: socialLinks.twitter   },
+    { icon: <RiLinkedinBoxLine />, label: "LinkedIn", url: socialLinks.linkedin },
+    { icon: <RiGithubLine />, label: "GitHub", url: socialLinks.github },
+    { icon: <RiGlobalLine />, label: "Portfolio", url: socialLinks.portfolio },
+    { icon: <RiTwitterLine />, label: "Twitter / X", url: socialLinks.twitter },
   ].filter((s) => !!s.url);
 
   if (loading) {
@@ -336,4 +336,5 @@ const MentorProfile = () => {
 };
 
 export default MentorProfile;
+
 

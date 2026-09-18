@@ -201,7 +201,7 @@ const MentorReviews = () => {
                   <div className="review-card-top">
                     <div className="reviewer-avatar">
                       {review.student?.profilePicture ? (
-                        <img src={review.student.profilePicture} alt={studentName} style={{width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover'}} />
+                        <img src={review.student.profilePicture} alt={studentName} style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                       ) : initials}
                     </div>
                     <div className="reviewer-info">
@@ -225,4 +225,5 @@ const MentorReviews = () => {
 };
 
 export default MentorReviews;
+
 

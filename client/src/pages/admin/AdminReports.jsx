@@ -4,16 +4,16 @@ import { FaUsers, FaUserCheck, FaGraduationCap, FaStar } from "react-icons/fa";
 import "../../styles/Admin/AdminReports.css";
 
 const PERIOD_OPTIONS = [
-    { value: "allTime",    label: "All Time" },
-    { value: "thisMonth",  label: "This Month" },
-    { value: "lastMonth",  label: "Last Month" },
-    { value: "last3Months",label: "Last 3 Months" },
-    { value: "thisYear",   label: "This Year" },
+    { value: "allTime", label: "All Time" },
+    { value: "thisMonth", label: "This Month" },
+    { value: "lastMonth", label: "Last Month" },
+    { value: "last3Months", label: "Last 3 Months" },
+    { value: "thisYear", label: "This Year" },
 ];
 
 const AdminReports = () => {
-    const [period, setPeriod]   = useState("allTime");
-    const [data, setData]       = useState(null);
+    const [period, setPeriod] = useState("allTime");
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const fetchReports = async (p) => {
@@ -33,8 +33,8 @@ const AdminReports = () => {
 
     useEffect(() => { fetchReports(period); }, [period]);
 
-    const stats      = data?.stats      || {};
-    const topSkills  = data?.topSkills  || [];
+    const stats = data?.stats || {};
+    const topSkills = data?.topSkills || [];
     const recentUsers = data?.recentUsers || [];
     const maxSkillCount = topSkills.length > 0 ? Math.max(...topSkills.map(s => s.value), 1) : 1;
 
@@ -189,4 +189,6 @@ const AdminReports = () => {
     );
 };
 
-export default AdminReports;
+export default AdminReports;
+
+

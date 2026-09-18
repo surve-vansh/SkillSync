@@ -18,8 +18,8 @@ const StudentDashboard = () => {
   const { user, loading } = useAuth();
 
   // Real data state
-  const [realStats, setRealStats]     = useState({ requests: 0, sessions: 0, notifications: 0 });
-  const [topMentors, setTopMentors]   = useState([]);
+  const [realStats, setRealStats] = useState({ requests: 0, sessions: 0, notifications: 0 });
+  const [topMentors, setTopMentors] = useState([]);
   const [recentNotifs, setRecentNotifs] = useState([]);
   const [dataLoading, setDataLoading] = useState(true);
 
@@ -40,12 +40,12 @@ const StudentDashboard = () => {
 
       const requests = reqRes.status === "fulfilled" ? (reqRes.value.data.requests || []) : [];
       const sessions = sessRes.status === "fulfilled" ? (sessRes.value.data.sessions || []) : [];
-      const mentors  = mentorsRes.status === "fulfilled" ? (mentorsRes.value.data.mentors || []) : [];
-      const notifs   = notifsRes.status === "fulfilled" ? (notifsRes.value.data.notifications || []) : [];
+      const mentors = mentorsRes.status === "fulfilled" ? (mentorsRes.value.data.mentors || []) : [];
+      const notifs = notifsRes.status === "fulfilled" ? (notifsRes.value.data.notifications || []) : [];
 
       setRealStats({
-        requests:      requests.length,
-        sessions:      sessions.filter(s => s.status === "completed").length,
+        requests: requests.length,
+        sessions: sessions.filter(s => s.status === "completed").length,
         notifications: notifs.filter(n => !n.isRead).length,
       });
       setTopMentors(mentors.slice(0, 3));
@@ -66,33 +66,33 @@ const StudentDashboard = () => {
   }
 
   const skills_offered = user?.skills_offered || [];
-  const skills_wanted  = user?.skills_wanted  || [];
-  const completion     = user?.completionPercentage || 0;
+  const skills_wanted = user?.skills_wanted || [];
+  const completion = user?.completionPercentage || 0;
   if (user?.primarySkill && !skills_offered.includes(user.primarySkill)) {
     skills_offered.unshift(user.primarySkill);
   }
 
   const statCards = [
-    { label: 'My Requests',   value: realStats.requests,      icon: <RiExchangeLine size={22} />,  color: '#8b5cf6', link: '/requests',      change: '' },
-    { label: 'Sessions Done', value: realStats.sessions,       icon: <RiCalendarLine size={22} />,  color: '#06b6d4', link: '/sessions',       change: '' },
-    { label: 'Skill Coins',   value: user?.skillCoins || 0,    icon: <RiCoinLine size={22} />,      color: '#fbbf24', link: '/wallet',         change: '' },
-    { label: 'Notifications', value: realStats.notifications,  icon: <RiBarChartLine size={22} />,  color: '#34d399', link: '/notifications',   change: '' },
+    { label: 'My Requests', value: realStats.requests, icon: <RiExchangeLine size={22} />, color: '#8b5cf6', link: '/requests', change: '' },
+    { label: 'Sessions Done', value: realStats.sessions, icon: <RiCalendarLine size={22} />, color: '#06b6d4', link: '/sessions', change: '' },
+    { label: 'Skill Coins', value: user?.skillCoins || 0, icon: <RiCoinLine size={22} />, color: '#fbbf24', link: '/wallet', change: '' },
+    { label: 'Notifications', value: realStats.notifications, icon: <RiBarChartLine size={22} />, color: '#34d399', link: '/notifications', change: '' },
   ];
 
   const pieData = [
     { name: 'Skills Offered', value: skills_offered.length || 1 },
-    { name: 'Skills Wanted',  value: skills_wanted.length  || 1 },
-    { name: 'Completed',      value: realStats.sessions + 1 },
-    { name: 'Requests',       value: realStats.requests + 1 },
+    { name: 'Skills Wanted', value: skills_wanted.length || 1 },
+    { name: 'Completed', value: realStats.sessions + 1 },
+    { name: 'Requests', value: realStats.requests + 1 },
   ];
 
 
   return (
     <div className="dashboard-page" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       {/* Welcome banner */}
-      <div className="glass-card dashboard-welcome"  style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1))', border: '1px solid rgba(139,92,246,0.3)', position: 'relative', overflow: 'hidden' }}>
+      <div className="glass-card dashboard-welcome" style={{ padding: '2rem', background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1))', border: '1px solid rgba(139,92,246,0.3)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', right: '-20px', top: '-20px', fontSize: '8rem', opacity: 0.05 }}>⚡</div>
-        <div  className="dashboard-welcome-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="dashboard-welcome-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '1.75rem', fontWeight: 800, margin: '0 0 0.5rem' }}>
               Good day, <span className="gradient-text">{user?.name?.split(' ')[0]}!</span> 👋
@@ -109,7 +109,7 @@ const StudentDashboard = () => {
               </Link>
             </div>
           </div>
-          <div  className="dashboard-coin-section" style={{ textAlign: 'right' }}>
+          <div className="dashboard-coin-section" style={{ textAlign: 'right' }}>
             <div className="coin-badge" style={{ fontSize: '1rem', padding: '0.5rem 1.25rem' }}>🪙 {user?.skillCoins} Coins</div>
             <p style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.5rem' }}>Your Skill Coin Balance</p>
           </div>
@@ -133,7 +133,7 @@ const StudentDashboard = () => {
       </div>
 
       {/* Stats cards */}
-      <div  className="dashboard-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
+      <div className="dashboard-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
         {statCards.map(card => (
           <Link key={card.label} to={card.link} style={{ textDecoration: 'none' }}>
             <div className="stat-card">
@@ -153,7 +153,7 @@ const StudentDashboard = () => {
       </div>
 
       {/* Charts Row */}
-      <div className="dashboard-charts-grid"  style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.5rem' }}>
+      <div className="dashboard-charts-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '1.5rem' }}>
         {/* Weekly activity */}
         <div className="card">
           <h3 style={{ fontWeight: 700, margin: '0 0 1.5rem', fontSize: '1rem' }}>📈 Weekly Activity</h3>
@@ -279,4 +279,5 @@ const StudentDashboard = () => {
 };
 
 export default StudentDashboard;
+
 

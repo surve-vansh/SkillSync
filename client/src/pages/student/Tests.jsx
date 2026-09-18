@@ -29,10 +29,10 @@ const Tests = () => {
     const [tests, setTests] = useState([]);
     const [loadingTests, setLoadingTests] = useState(true);
     const [stats, setStats] = useState({ taken: 0, passed: 0, avgScore: 0, coinsEarned: 0 });
-    
+
     const [selectedTest, setSelectedTest] = useState(null);
     const [loadingTest, setLoadingTest] = useState(false);
-    
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [submitting, setSubmitting] = useState(false);
@@ -65,7 +65,7 @@ const Tests = () => {
             setAnswers([]);
             setCurrentQuestion(0);
             setResult(null);
-        } catch(err) {
+        } catch (err) {
             alert('Failed to load test');
         } finally {
             setLoadingTest(false);
@@ -90,7 +90,7 @@ const Tests = () => {
             );
             setResult(res.data);
             if (res.data.coinsEarned > 0) refreshUser();
-        } catch(err) {
+        } catch (err) {
             const msg = err.response?.data?.message || 'Failed to submit';
             if (msg.includes('already passed')) {
                 alert('You have already passed this test!');
@@ -117,7 +117,7 @@ const Tests = () => {
         setResult(null);
         // Refresh tests and stats in case stats updated
         axios.get("https://skill-sync-swart-phi.vercel.app/api/tests/stats", { withCredentials: true })
-             .then(res => setStats(res.data)).catch(console.error);
+            .then(res => setStats(res.data)).catch(console.error);
     };
 
     /* =====================================================
@@ -211,11 +211,10 @@ const Tests = () => {
                 <div className="test-progress">
                     <div
                         style={{
-                            width: `${
-                                ((currentQuestion + 1) /
+                            width: `${((currentQuestion + 1) /
                                     selectedTest.questions.length) *
                                 100
-                            }%`,
+                                }%`,
                         }}
                     />
                 </div>
@@ -240,11 +239,10 @@ const Tests = () => {
                             <button
                                 key={idx}
                                 type="button"
-                                className={`question-option ${
-                                    answers[currentQuestion] === idx
+                                className={`question-option ${answers[currentQuestion] === idx
                                         ? "selected"
                                         : ""
-                                }`}
+                                    }`}
                                 onClick={() => {
                                     setAnswers((prev) => {
                                         const next = [...prev];
@@ -425,3 +423,4 @@ const Tests = () => {
 };
 
 export default Tests;
+

@@ -24,11 +24,11 @@ const Progress = () => {
        STATES
     ===================================================== */
 
-    const [selectedSkill, setSelectedSkill]   = useState(null);
-    const [loading, setLoading]               = useState(true);
-    const [skillProgress, setSkillProgress]   = useState([]);
+    const [selectedSkill, setSelectedSkill] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [skillProgress, setSkillProgress] = useState([]);
     const [recentActivity, setRecentActivity] = useState([]);
-    const [stats, setStats]                   = useState({
+    const [stats, setStats] = useState({
         overallProgress: 0,
         skillsCount: 0,
         testsCompleted: 0,
@@ -47,7 +47,7 @@ const Progress = () => {
                 axios.get("https://skill-sync-swart-phi.vercel.app/api/sessions/mine", { withCredentials: true }),
             ]);
 
-            const sessions  = sessionsRes.data.sessions  || [];
+            const sessions = sessionsRes.data.sessions || [];
 
             // Build skill progress from sessions
             const skillMap = {};
@@ -73,8 +73,8 @@ const Progress = () => {
 
             const testStats = testStatsRes.data || {};
             const sessionsCompleted = sessions.filter(s => s.status === "completed").length;
-            const testsCompleted    = testStats.passed || 0;
-            const overallProgress   = skillArr.length > 0
+            const testsCompleted = testStats.passed || 0;
+            const overallProgress = skillArr.length > 0
                 ? Math.round(skillArr.reduce((s, sk) => s + sk.progress, 0) / skillArr.length)
                 : 0;
 
@@ -298,56 +298,56 @@ const Progress = () => {
                                 <p>No sessions yet. Start learning to track progress!</p>
                             </div>
                         ) : (
-                        skillProgress.map((skill) => (
+                            skillProgress.map((skill) => (
 
-                            <button
-                                type="button"
-                                className="skill-progress-item"
-                                key={skill.id}
-                                onClick={() => setSelectedSkill(skill)}
-                            >
+                                <button
+                                    type="button"
+                                    className="skill-progress-item"
+                                    key={skill.id}
+                                    onClick={() => setSelectedSkill(skill)}
+                                >
 
-                                <div className="skill-progress-top">
+                                    <div className="skill-progress-top">
 
-                                    <div>
+                                        <div>
 
-                                        <strong>
-                                            {skill.name}
-                                        </strong>
+                                            <strong>
+                                                {skill.name}
+                                            </strong>
 
-                                        <span>
-                                            {skill.sessions} learning sessions
-                                        </span>
+                                            <span>
+                                                {skill.sessions} learning sessions
+                                            </span>
+
+                                        </div>
+
+                                        <div className="skill-progress-right">
+
+                                            <b>
+                                                {skill.progress}%
+                                            </b>
+
+                                            <RiArrowRightLine />
+
+                                        </div>
 
                                     </div>
 
-                                    <div className="skill-progress-right">
 
-                                        <b>
-                                            {skill.progress}%
-                                        </b>
+                                    <div className="skill-progress-track">
 
-                                        <RiArrowRightLine />
+                                        <div
+                                            className={`skill-progress-fill ${skill.color}`}
+                                            style={{
+                                                width: `${skill.progress}%`,
+                                            }}
+                                        />
 
                                     </div>
 
-                                </div>
+                                </button>
 
-
-                                <div className="skill-progress-track">
-
-                                    <div
-                                        className={`skill-progress-fill ${skill.color}`}
-                                        style={{
-                                            width: `${skill.progress}%`,
-                                        }}
-                                    />
-
-                                </div>
-
-                            </button>
-
-                        ))
+                            ))
                         )}
 
                     </div>
@@ -414,7 +414,7 @@ const Progress = () => {
             </section>
 
 
-   
+
 
             {/* =================================================
                 ACHIEVEMENT
@@ -624,3 +624,4 @@ const Progress = () => {
 };
 
 export default Progress;
+

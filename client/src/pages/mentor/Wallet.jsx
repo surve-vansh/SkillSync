@@ -20,20 +20,20 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const typeEmoji = {
-    welcome:  "🎁",
-    test:     "📝",
-    session:  "📚",
-    review:   "⭐",
-    milestone:"🏆",
-    spend:    "🔄",
-    other:    "💰",
+    welcome: "🎁",
+    test: "📝",
+    session: "📚",
+    review: "⭐",
+    milestone: "🏆",
+    spend: "🔄",
+    other: "💰",
 };
 
 const MentorWallet = () => {
     const { user } = useAuth();
     const [transactions, setTransactions] = useState([]);
-    const [loading, setLoading]           = useState(true);
-    const [activeTab, setActiveTab]       = useState("All");
+    const [loading, setLoading] = useState(true);
+    const [activeTab, setActiveTab] = useState("All");
 
     useEffect(() => { fetchData(); }, []);
 
@@ -51,9 +51,9 @@ const MentorWallet = () => {
         }
     };
 
-    const balance    = user?.skillCoins ?? 0;
+    const balance = user?.skillCoins ?? 0;
     const totalEarned = transactions.filter(t => t.amount > 0).reduce((s, t) => s + t.amount, 0);
-    const totalSpent  = Math.abs(transactions.filter(t => t.amount < 0).reduce((s, t) => s + t.amount, 0));
+    const totalSpent = Math.abs(transactions.filter(t => t.amount < 0).reduce((s, t) => s + t.amount, 0));
     const thisWeekEarned = (() => {
         const now = new Date();
         const weekAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
@@ -67,7 +67,7 @@ const MentorWallet = () => {
 
     const filtered = transactions.filter(t => {
         if (activeTab === "Earned") return t.amount > 0;
-        if (activeTab === "Spent")  return t.amount < 0;
+        if (activeTab === "Spent") return t.amount < 0;
         return true;
     });
 
@@ -215,4 +215,5 @@ const MentorWallet = () => {
 };
 
 export default MentorWallet;
+
 

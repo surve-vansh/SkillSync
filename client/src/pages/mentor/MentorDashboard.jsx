@@ -43,10 +43,10 @@ const MentorDashboard = () => {
   const navigate = useNavigate();
 
   /* ── Real data state ── */
-  const [stats,    setStats]    = useState({ totalStudents: 0, pendingRequests: 0, activeSessions: 0, completedSessions: 0 });
+  const [stats, setStats] = useState({ totalStudents: 0, pendingRequests: 0, activeSessions: 0, completedSessions: 0 });
   const [requests, setRequests] = useState([]);   // pending requests for banner + card
   const [sessions, setSessions] = useState([]);
-  const [loading,  setLoading]  = useState(true);
+  const [loading, setLoading] = useState(true);
 
   /* ── Fetch data on mount ── */
   useEffect(() => {
@@ -61,18 +61,18 @@ const MentorDashboard = () => {
         const allRequests = reqRes.status === "fulfilled" ? (reqRes.value.data.requests || []) : [];
         const allSessions = sessRes.status === "fulfilled" ? (sessRes.value.data.sessions || []) : [];
 
-        const pending   = allRequests.filter((r) => r.status === "pending");
-        const accepted  = allRequests.filter((r) => r.status === "accepted");
-        const active    = allSessions.filter((s) => s.status === "upcoming" || s.status === "ongoing");
+        const pending = allRequests.filter((r) => r.status === "pending");
+        const accepted = allRequests.filter((r) => r.status === "accepted");
+        const active = allSessions.filter((s) => s.status === "upcoming" || s.status === "ongoing");
         const completed = allSessions.filter((s) => s.status === "completed");
 
         setRequests(pending.slice(0, 3));
         setSessions(allSessions);
         setStats({
-          totalStudents:      accepted.length,
-          pendingRequests:    pending.length,
-          activeSessions:     active.length,
-          completedSessions:  completed.length,
+          totalStudents: accepted.length,
+          pendingRequests: pending.length,
+          activeSessions: active.length,
+          completedSessions: completed.length,
         });
       } catch (err) {
         console.error("Dashboard fetch error:", err.message);
@@ -110,8 +110,8 @@ const MentorDashboard = () => {
             {loading
               ? "Loading your dashboard..."
               : stats.pendingRequests > 0
-              ? `You have ${stats.pendingRequests} pending request${stats.pendingRequests > 1 ? "s" : ""} waiting for your response.`
-              : "You have no pending requests right now."}
+                ? `You have ${stats.pendingRequests} pending request${stats.pendingRequests > 1 ? "s" : ""} waiting for your response.`
+                : "You have no pending requests right now."}
           </p>
 
           <div className="banner-actions">
@@ -266,3 +266,4 @@ const MentorDashboard = () => {
 };
 
 export default MentorDashboard;
+

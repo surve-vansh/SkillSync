@@ -35,7 +35,7 @@ const Landing = () => {
       .then((res) => {
         if (res.data.success) setLiveStats(res.data);
       })
-      .catch(() => {}); // fail silently on landing page
+      .catch(() => { }); // fail silently on landing page
   }, []);
 
   /* Format a count as "N+" string, or "—" while loading */
@@ -43,22 +43,22 @@ const Landing = () => {
   const fmtRating = (n) => (n === null ? "..." : `${n}/5`);
 
   const stats = [
-    { icon: "🎓", value: fmt(liveStats.verifiedStudents),   label: "Verified Students"    },
-    { icon: "💡", value: fmt(liveStats.skillsAvailable),    label: "Skills Available"     },
+    { icon: "🎓", value: fmt(liveStats.verifiedStudents), label: "Verified Students" },
+    { icon: "💡", value: fmt(liveStats.skillsAvailable), label: "Skills Available" },
     // { icon: "🤝", value: fmt(liveStats.successfulExchanges),label: "Successful Exchanges" },
     // { icon: "⭐", value: fmtRating(liveStats.averageRating),label: "Average Rating"       },
     { icon: "🤝", value: "10+", label: "Successful Exchanges" },
-  { icon: "⭐", value: "4.8/5", label: "Average Rating" },
+    { icon: "⭐", value: "4.8/5", label: "Average Rating" },
   ];
 
   /* ── Contact form state ────────────────────────────────────── */
-  const [contactName,    setContactName]    = useState("");
-  const [contactEmail,   setContactEmail]   = useState("");
+  const [contactName, setContactName] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
   const [contactSubject, setContactSubject] = useState("");
   const [contactMessage, setContactMessage] = useState("");
   const [contactLoading, setContactLoading] = useState(false);
-  const [contactStatus,  setContactStatus]  = useState(""); // "" | "success" | "error"
-  const [contactError,   setContactError]   = useState("");
+  const [contactStatus, setContactStatus] = useState(""); // "" | "success" | "error"
+  const [contactError, setContactError] = useState("");
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
@@ -234,9 +234,9 @@ const Landing = () => {
           <source src={HeroVedio} type="video/mp4" />
 
         </video>
-         <div className="absolute inset-0 bg-slate-900/65"></div>
-         
-         
+        <div className="absolute inset-0 bg-slate-900/65"></div>
+
+
         <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
           <div className="max-w-6xl mx-auto">
 
@@ -612,7 +612,7 @@ hover:border-violet-500/45
                     onClick={() => toggle(i)}
                     className="flex items-center justify-between w-full gap-4 px-6 py-5 text-left"
                   >
-                    <span  className="text-base font-semibold text-slate-900 dark:text-white md:text-lg">
+                    <span className="text-base font-semibold text-slate-900 dark:text-white md:text-lg">
                       {faq.question}
                     </span>
                     <ChevronIcon open={open} />
@@ -852,3 +852,4 @@ hover:border-violet-500/45
 };
 
 export default Landing;
+

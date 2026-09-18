@@ -125,11 +125,11 @@ import {
 // ];
 
 const skillIcons = {
-  "React.js": "⚛️",
-  "Node.js": "🟢",
-  "JavaScript": "⚡",
-  "Python": "🐍",
-  "Machine Learning": "🤖",
+    "React.js": "⚛️",
+    "Node.js": "🟢",
+    "JavaScript": "⚡",
+    "Python": "🐍",
+    "Machine Learning": "🤖",
 };
 const categories = [
     "All",
@@ -266,7 +266,7 @@ const BrowseSkills = () => {
 
         });
 
-    }, [skillsData, activeCategory,activeCategory]);
+    }, [skillsData, activeCategory, activeCategory]);
 
 
     const handleFindMentors = (skill) => {
@@ -395,3 +395,4 @@ const BrowseSkills = () => {
 
 
 export default BrowseSkills;
+

@@ -19,19 +19,19 @@ const STATUS_OPTS = ["All Status", "upcoming", "ongoing", "completed", "cancelle
 
 export default function MentorSessions() {
   const { user } = useAuth();
-  const [sessions, setSessions]         = useState([]);
-  const [loading, setLoading]           = useState(true);
-  const [search, setSearch]             = useState("");
+  const [sessions, setSessions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All Status");
-  const [showCreate, setShowCreate]     = useState(false);
+  const [showCreate, setShowCreate] = useState(false);
   const [showLinkModal, setShowLinkModal] = useState(null); // sessionId
-  const [linkInput, setLinkInput]       = useState("");
-  const [saving, setSaving]             = useState(false);
+  const [linkInput, setLinkInput] = useState("");
+  const [saving, setSaving] = useState(false);
 
   /* ── Create form state ── */
   const [form, setForm] = useState({
     studentId: "", skill: "", title: "", description: "",
-    scheduledDate: "", startTime: "", duration: "60 min", meetingLink: "",
+    scheduledDate: "", startTime: "", duration: "60", meetingLink: "",
   });
   const [myStudents, setMyStudents] = useState([]);
 
@@ -64,7 +64,7 @@ export default function MentorSessions() {
     try {
       await axios.post("https://skill-sync-swart-phi.vercel.app/api/sessions", form, { withCredentials: true });
       setShowCreate(false);
-      setForm({ studentId: "", skill: "", title: "", description: "", scheduledDate: "", startTime: "", duration: "60 min", meetingLink: "" });
+      setForm({ studentId: "", skill: "", title: "", description: "", scheduledDate: "", startTime: "", duration: "60", meetingLink: "" });
       fetchSessions();
     } catch (err) {
       alert(err.response?.data?.message || "Failed to create session.");
@@ -108,7 +108,7 @@ export default function MentorSessions() {
   });
 
   const stats = {
-    upcoming:  sessions.filter(s => s.status === "upcoming").length,
+    upcoming: sessions.filter(s => s.status === "upcoming").length,
     completed: sessions.filter(s => s.status === "completed").length,
     cancelled: sessions.filter(s => s.status === "cancelled").length,
   };
@@ -226,7 +226,7 @@ export default function MentorSessions() {
                   {!session.meetingLink && session.status !== "cancelled" && session.status !== "completed" && (
                     <button onClick={() => { setShowLinkModal(session._id); setLinkInput(""); }}
                       style={{ fontSize: "0.78rem", padding: "5px 12px", borderRadius: "8px", border: "1px solid rgba(139,92,246,0.3)", background: "transparent", color: "#a78bfa", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
-                      <RiLinkLine /> Add Meet Link
+                      <RiLinksLine /> Add Meet Link
                     </button>
                   )}
                   {session.status === "upcoming" && (
@@ -277,7 +277,9 @@ export default function MentorSessions() {
                   style={{ width: "100%", padding: "0.6rem", borderRadius: "10px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "inherit", marginTop: "4px" }}>
                   <option value="">Select a student</option>
                   {myStudents.map(s => (
-                    <option key={s._id} value={s._id}>{s.name} ({s.email})</option>
+                    <option key={s.student?._id} value={s.student?._id}>
+                      {s.student?.name} ({s.student?.email})
+                    </option>
                   ))}
                 </select>
               </div>
@@ -345,3 +347,4 @@ export default function MentorSessions() {
     </div>
   );
 }
+

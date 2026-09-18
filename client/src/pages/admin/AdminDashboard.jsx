@@ -97,7 +97,7 @@ const AdminDashboard = () => {
                 "https://skill-sync-swart-phi.vercel.app/api/admin/dashboard"
             );
             console.log("FULL RESPONSE", response.data);
-console.log("RECENT USERS", response.data.recentUsers);
+            console.log("RECENT USERS", response.data.recentUsers);
             if (response.data.success) {
                 setDashboardData(response.data.stats);
                 setRecentUsers(response.data.recentUsers || []);
@@ -131,7 +131,7 @@ console.log("RECENT USERS", response.data.recentUsers);
         totalUsers > 0
             ? ((admins / totalUsers) * 100).toFixed(0)
             : 0;
-            
+
     return (
         <div className="admin-dashboard">
 
@@ -349,7 +349,7 @@ console.log("RECENT USERS", response.data.recentUsers);
                 {/* Platform Overview */}
 
                 <div className="admin-card platform-overview-card">
-              
+
                     <div className="admin-card-header">
 
                         <div>
@@ -368,17 +368,17 @@ console.log("RECENT USERS", response.data.recentUsers);
                     <div className="platform-donut-area">
 
                         <div className="donut-chart"
-                         style={{
-                            background: `conic-gradient(
+                            style={{
+                                background: `conic-gradient(
       #8b5cf6 0 ${studentPercent}%,
       #22d3ee ${studentPercent}% ${Number(studentPercent) +
-                                Number(mentorPercent)
-                                }%,
+                                    Number(mentorPercent)
+                                    }%,
       #64748b ${Number(studentPercent) +
-                                Number(mentorPercent)
-                                }% 100%
+                                    Number(mentorPercent)
+                                    }% 100%
     )`,
-                        }}
+                            }}
                         >
                             <div className="donut-center">
                                 <strong>{totalUsers}</strong>
@@ -596,7 +596,7 @@ console.log("RECENT USERS", response.data.recentUsers);
 
                     <div className="popular-skills-list">
 
-                        { dashboardData?.popularSkills?.map((skill, index) => (
+                        {dashboardData?.popularSkills?.map((skill, index) => (
 
                             <div
                                 className="popular-skill"
@@ -654,3 +654,4 @@ console.log("RECENT USERS", response.data.recentUsers);
 };
 
 export default AdminDashboard;
+

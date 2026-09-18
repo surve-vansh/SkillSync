@@ -10,9 +10,9 @@ import {
 import "../../styles/Admin/AdminSkillReq.css";
 
 const AdminSkillRequests = () => {
-    const [requests,     setRequests]     = useState([]);
-    const [loading,      setLoading]      = useState(true);
-    const [search,       setSearch]       = useState("");
+    const [requests, setRequests] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("");
     const [statusFilter, setStatusFilter] = useState("all");
 
     useEffect(() => { fetchRequests(); }, []);
@@ -48,8 +48,8 @@ const AdminSkillRequests = () => {
         const searchText = search.toLowerCase();
         const matchesSearch =
             (request.student?.name || "").toLowerCase().includes(searchText) ||
-            (request.mentor?.name  || "").toLowerCase().includes(searchText) ||
-            (request.skill         || "").toLowerCase().includes(searchText);
+            (request.mentor?.name || "").toLowerCase().includes(searchText) ||
+            (request.skill || "").toLowerCase().includes(searchText);
         const matchesStatus =
             statusFilter === "all" || request.status === statusFilter;
         return matchesSearch && matchesStatus;
@@ -208,3 +208,4 @@ const AdminSkillRequests = () => {
 };
 
 export default AdminSkillRequests;
+

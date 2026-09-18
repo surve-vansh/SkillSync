@@ -11,7 +11,7 @@ const StudentLayout = () => {
   return (
     <div className="student-layout">
 
-      {/* Sidebar */}
+      {/* Sidebar — manages its own overlay internally */}
       <StudentSidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
@@ -21,7 +21,7 @@ const StudentLayout = () => {
       <header className="mobile-header">
         <button
           onClick={() => setSidebarOpen(true)}
-          className="mobile-menu-btn"
+          className="mobile-menu-button"
         >
           <RiMenuLine size={26} />
         </button>
@@ -30,14 +30,6 @@ const StudentLayout = () => {
           SkillSync
         </span>
       </header>
-
-      {/* Overlay */}
-      {sidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
 
       {/* Main Content */}
       <main className="main-content">
@@ -51,3 +43,4 @@ const StudentLayout = () => {
 };
 
 export default StudentLayout;
+

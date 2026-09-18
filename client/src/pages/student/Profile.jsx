@@ -146,7 +146,7 @@ const Profile = () => {
             }}>
                 <div style={{ position: 'absolute', right: '-30px', top: '-30px', fontSize: '10rem', opacity: 0.03, pointerEvents: 'none' }}>👤</div>
 
-                <div  className="profile-hero-content" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.75rem', flexWrap: 'wrap' }}>
+                <div className="profile-hero-content" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.75rem', flexWrap: 'wrap' }}>
 
                     {/* Avatar */}
                     <div style={{ position: 'relative', flexShrink: 0 }}>
@@ -198,7 +198,7 @@ const Profile = () => {
                     </div>
 
                     {/* Info */}
-                    <div  className="profile-info" style={{ flex: 1, minWidth: 200 }}>
+                    <div className="profile-info" style={{ flex: 1, minWidth: 200 }}>
                         <div className="profile-info-header" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
                             <h1 style={{ margin: 0, fontSize: '1.6rem', fontWeight: 800, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                                 {profile.name}
@@ -295,7 +295,7 @@ const Profile = () => {
                 </div>
 
                 {/* ── Profile Completion ── */}
-                <div  className="profile-completion" style={{
+                <div className="profile-completion" style={{
                     marginTop: '1.75rem', padding: '1.25rem',
                     background: 'rgba(0,0,0,0.2)', borderRadius: '0.75rem',
                 }}>
@@ -451,4 +451,5 @@ const Profile = () => {
 };
 
 export default Profile;
+
 

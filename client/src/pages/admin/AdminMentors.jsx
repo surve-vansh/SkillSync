@@ -80,8 +80,8 @@ const Toast = ({ open, message, type, onClose }) => {
 
 const AdminMentors = () => {
     const [applications, setApplications] = useState([]);
-    const [activeTab,    setActiveTab]    = useState("pending");
-    const [loading,      setLoading]      = useState(true);
+    const [activeTab, setActiveTab] = useState("pending");
+    const [loading, setLoading] = useState(true);
 
     // Confirm modal state
     const [confirmModal, setConfirmModal] = useState({
@@ -110,9 +110,9 @@ const AdminMentors = () => {
         }
     };
 
-    const pendingMentors  = applications.filter((m) => m.status === "pending");
+    const pendingMentors = applications.filter((m) => m.status === "pending");
     const approvedMentors = applications.filter((m) => m.status === "approved" || m.mentorApplicationStatus === "approved");
-    const visibleMentors  = activeTab === "pending" ? pendingMentors : approvedMentors;
+    const visibleMentors = activeTab === "pending" ? pendingMentors : approvedMentors;
 
     /* ── Approve ── */
     const handleApprove = (mentor) => {
@@ -187,7 +187,7 @@ const AdminMentors = () => {
     };
 
     const closeModal = () => setConfirmModal((m) => ({ ...m, open: false, action: null }));
-    const runAction  = async () => {
+    const runAction = async () => {
         const fn = confirmModal.action;
         closeModal();
         if (fn) await fn();
@@ -341,3 +341,4 @@ const AdminMentors = () => {
 };
 
 export default AdminMentors;
+

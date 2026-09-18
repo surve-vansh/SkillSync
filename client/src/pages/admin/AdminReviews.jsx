@@ -12,37 +12,37 @@ import "../../styles/Admin/AdminReviews.css";
 const AdminReviews = () => {
     // const [reviews, setReviews]         = useState([]);
     const [reviews, setReviews] = useState([
-    {
-        _id: "demo-review-1",
-        student: {
-            name: "Rahul Sharma",
-            email: "rahul@example.com"
+        {
+            _id: "demo-review-1",
+            student: {
+                name: "Rahul Sharma",
+                email: "rahul@example.com"
+            },
+            mentor: {
+                name: "Pankaj"
+            },
+            skill: "Flutter",
+            rating: 5,
+            comment: "Excellent mentor! Explained Flutter concepts very clearly.",
+            createdAt: "2026-08-25T10:30:00.000Z"
         },
-        mentor: {
-            name: "Pankaj"
-        },
-        skill: "Flutter",
-        rating: 5,
-        comment: "Excellent mentor! Explained Flutter concepts very clearly.",
-        createdAt: "2026-08-25T10:30:00.000Z"
-    },
-    {
-        _id: "demo-review-2",
-        student: {
-            name: "Priya Patel",
-            email: "priya@example.com"
-        },
-        mentor: {
-            name: "Pranay"
-        },
-        skill: "Node.js",
-        rating: 4,
-        comment: "Very helpful session and good guidance throughout.",
-        createdAt: "2026-08-26T14:15:00.000Z"
-    }
-]);
-    const [loading, setLoading]         = useState(false);
-    const [search, setSearch]           = useState("");
+        {
+            _id: "demo-review-2",
+            student: {
+                name: "Priya Patel",
+                email: "priya@example.com"
+            },
+            mentor: {
+                name: "Pranay"
+            },
+            skill: "Node.js",
+            rating: 4,
+            comment: "Very helpful session and good guidance throughout.",
+            createdAt: "2026-08-26T14:15:00.000Z"
+        }
+    ]);
+    const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState("");
     const [ratingFilter, setRatingFilter] = useState("all");
 
     // useEffect(() => { fetchReviews(); }, []);
@@ -72,7 +72,7 @@ const AdminReviews = () => {
     const filteredReviews = reviews.filter((review) => {
         const searchText = search.toLowerCase();
         const studentName = review.student?.name || "";
-        const mentorName  = review.mentor?.name  || "";
+        const mentorName = review.mentor?.name || "";
         const matchesSearch =
             studentName.toLowerCase().includes(searchText) ||
             mentorName.toLowerCase().includes(searchText) ||
@@ -221,3 +221,4 @@ const AdminReviews = () => {
 };
 
 export default AdminReviews;
+

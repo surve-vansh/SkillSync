@@ -46,3 +46,4 @@ const ProtectedRoute = ({ allowedRoles }) => {
 };
 
 export default ProtectedRoute;
+

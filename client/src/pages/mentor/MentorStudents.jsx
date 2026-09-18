@@ -12,11 +12,11 @@ import {
 } from "react-icons/ri";
 
 export default function MyStudents() {
-  const [students,  setStudents]  = useState([]);
-  const [stats,     setStats]     = useState({ total: 0, uniqueSkills: 0, newThisWeek: 0 });
-  const [loading,   setLoading]   = useState(true);
-  const [error,     setError]     = useState("");
-  const [search,    setSearch]    = useState("");
+  const [students, setStudents] = useState([]);
+  const [stats, setStats] = useState({ total: 0, uniqueSkills: 0, newThisWeek: 0 });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
 
   /* ── Fetch accepted students ── */
   const fetchStudents = async () => {
@@ -26,7 +26,7 @@ export default function MyStudents() {
       const res = await axios.get("https://skill-sync-swart-phi.vercel.app/api/mentor/students", {
         withCredentials: true,
       });
-      setStudents(res.data.students  || []);
+      setStudents(res.data.students || []);
       setStats(res.data.stats || { total: 0, uniqueSkills: 0, newThisWeek: 0 });
     } catch (err) {
       setError(err.response?.data?.message || "Failed to load students.");
@@ -41,9 +41,9 @@ export default function MyStudents() {
   const filtered = students.filter((s) => {
     const q = search.toLowerCase();
     return (
-      (s.student?.name  || "").toLowerCase().includes(q) ||
+      (s.student?.name || "").toLowerCase().includes(q) ||
       (s.student?.email || "").toLowerCase().includes(q) ||
-      (s.skill          || "").toLowerCase().includes(q)
+      (s.skill || "").toLowerCase().includes(q)
     );
   });
 
@@ -141,7 +141,7 @@ export default function MyStudents() {
           <div className="students-grid">
             {filtered.map((item) => {
               const student = item.student;
-              const src     = student?.profilePicture ? avatarSrc(student.profilePicture) : null;
+              const src = student?.profilePicture ? avatarSrc(student.profilePicture) : null;
               const initial = student?.name?.charAt(0)?.toUpperCase() || "S";
 
               return (
@@ -188,3 +188,4 @@ export default function MyStudents() {
     </div>
   );
 }
+

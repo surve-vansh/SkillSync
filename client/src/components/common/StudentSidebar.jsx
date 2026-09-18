@@ -13,7 +13,7 @@ import {
     RiDashboardLine, RiUserLine, RiSearchLine, RiTeamLine,
     RiExchangeLine, RiMessage3Line, RiCoinLine, RiBellLine,
     RiCalendarLine, RiFileListLine, RiBarChartLine, RiLogoutBoxLine,
-    RiMoonLine, RiSunLine, RiCloseLine, RiShieldStarLine,RiUserStarLine
+    RiMoonLine, RiSunLine, RiCloseLine, RiShieldStarLine, RiUserStarLine
 } from 'react-icons/ri';
 
 const studentLinks = [
@@ -25,7 +25,7 @@ const studentLinks = [
     { to: '/chat', icon: <RiMessage3Line />, label: 'Chat' },
     { to: '/wallet', icon: <RiCoinLine />, label: 'Wallet' },
     { to: '/notifications', icon: <RiBellLine />, label: 'Notifications', badge: true },
-    {to: "/become-mentor",icon: <RiUserStarLine />,label: "Become Mentor",},
+    { to: "/become-mentor", icon: <RiUserStarLine />, label: "Become Mentor", },
     { to: '/sessions', icon: <RiCalendarLine />, label: 'Sessions' },
     { to: '/tests', icon: <RiFileListLine />, label: 'Tests' },
     { to: '/progress', icon: <RiBarChartLine />, label: 'Progress' },
@@ -53,7 +53,7 @@ const StudentSidebar = ({ isOpen, onClose }) => {
             : (localStorage.getItem("activeRole") === "mentor" && user.isMentor ? "mentor" : "student");
         axios.get(`https://skill-sync-swart-phi.vercel.app/api/notifications/unread-count?role=${role}`, { withCredentials: true })
             .then((res) => setUnreadCount(res.data.count || 0))
-            .catch(() => {});
+            .catch(() => { });
     }, [user]);
 
     /* ── Switch role handler ── */
@@ -253,4 +253,5 @@ const StudentSidebar = ({ isOpen, onClose }) => {
 };
 
 export default StudentSidebar;
+
 

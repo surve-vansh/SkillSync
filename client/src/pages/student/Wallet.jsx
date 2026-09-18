@@ -18,20 +18,20 @@ import "../../styles/Student/Wallet.css";
 
 /* ── Icon map by transaction type ── */
 const typeIcon = {
-    welcome:  <RiGiftLine />,
-    test:     <RiCheckboxCircleLine />,
-    session:  <RiBookOpenLine />,
-    review:   <RiStarLine />,
-    milestone:<RiTrophyLine />,
-    spend:    <RiCoinLine />,
-    other:    <RiTimeLine />,
+    welcome: <RiGiftLine />,
+    test: <RiCheckboxCircleLine />,
+    session: <RiBookOpenLine />,
+    review: <RiStarLine />,
+    milestone: <RiTrophyLine />,
+    spend: <RiCoinLine />,
+    other: <RiTimeLine />,
 };
 
 const earnMethods = [
-    { icon: <RiFileList3Line />, title: "Complete a Test",      description: "Pass a skill test",              coins: "+20" },
-    { icon: <RiBookOpenLine />,  title: "Complete a Session",   description: "Finish a learning session",      coins: "+30" },
-    { icon: <RiStarLine />,      title: "Receive a Rating",     description: "Get a rating from another user", coins: "+10" },
-    { icon: <RiTrophyLine />,    title: "Complete a Milestone", description: "Reach your learning milestone",  coins: "+50" },
+    { icon: <RiFileList3Line />, title: "Complete a Test", description: "Pass a skill test", coins: "+20" },
+    { icon: <RiBookOpenLine />, title: "Complete a Session", description: "Finish a learning session", coins: "+30" },
+    { icon: <RiStarLine />, title: "Receive a Rating", description: "Get a rating from another user", coins: "+10" },
+    { icon: <RiTrophyLine />, title: "Complete a Milestone", description: "Reach your learning milestone", coins: "+50" },
 ];
 
 const Wallet = () => {
@@ -55,9 +55,9 @@ const Wallet = () => {
         }
     };
 
-    const balance    = user?.skillCoins ?? 0;
+    const balance = user?.skillCoins ?? 0;
     const totalEarned = transactions.filter(t => t.amount > 0).reduce((s, t) => s + t.amount, 0);
-    const totalSpent  = Math.abs(transactions.filter(t => t.amount < 0).reduce((s, t) => s + t.amount, 0));
+    const totalSpent = Math.abs(transactions.filter(t => t.amount < 0).reduce((s, t) => s + t.amount, 0));
 
     const fmtDate = (iso) => {
         if (!iso) return "";
@@ -186,3 +186,4 @@ const Wallet = () => {
 };
 
 export default Wallet;
+

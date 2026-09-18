@@ -34,9 +34,9 @@ const MentorChat = () => {
     try {
       const res = await axios.get(`https://skill-sync-swart-phi.vercel.app/api/chat/conversations/${id}/messages`, { withCredentials: true });
       setMessages(res.data.messages || []);
-      
+
       await axios.put(`https://skill-sync-swart-phi.vercel.app/api/chat/conversations/${id}/read`, {}, { withCredentials: true });
-      
+
       setConversations(prev => prev.map(c => c._id === id ? { ...c, studentUnread: 0, mentorUnread: 0 } : c));
     } catch (err) { console.error(err); }
     finally { setLoadingMsgs(false); }
@@ -67,13 +67,13 @@ const MentorChat = () => {
       );
       const newMsg = res.data.message;
       setMessages(prev => [...prev, newMsg]);
-      
+
       setConversations(prev => prev.map(c =>
         c._id === conversationId
           ? { ...c, lastMessage: text.substring(0, 60), lastMessageAt: new Date().toISOString() }
           : c
       ));
-      
+
       const conv = conversations.find(c => c._id === conversationId);
       if (conv && socket) {
         const recipientId = conv.student._id === user._id ? conv.mentor._id : conv.student._id;
@@ -110,4 +110,5 @@ const MentorChat = () => {
 };
 
 export default MentorChat;
+
 
