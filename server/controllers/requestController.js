@@ -49,7 +49,7 @@ const sendRequest = async (req, res) => {
         await createNotification({
             userId:     mentor._id,
             title:      "New Learning Request",
-            message:    `${student.name}  wants to learn ${skill ? ` for ${skill}` : ""}from you..`,
+            message: `${student.name} wants to learn ${skill || "a skill"} from you.`,
             type:       "Requests",
             targetRole: "mentor",
             link:       "/mentor/requests",
